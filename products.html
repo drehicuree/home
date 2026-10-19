@@ -1,0 +1,2469 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products - Dr Ehi Herbal Cure</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* ... existing code ... */
+        
+        /* Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            overflow-x: hidden;
+            color: #333;
+            min-width: 320px;
+            background-color: #f9f9f9;
+        }
+        
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+        
+        ul {
+            list-style: none;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        /* Top Bar */
+        .top-bar {
+            background-color: #8bc34a;
+            color: white;
+            padding: 8px 0;
+            font-size: clamp(10px, 1vw, 14px);
+        }
+        
+        .top-bar-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 90%;
+            margin: 0 auto;
+            flex-wrap: nowrap;
+            overflow-x: auto;
+            white-space: nowrap;
+            scrollbar-width: none;
+        }
+        
+        .top-bar-content::-webkit-scrollbar {
+            display: none;
+        }
+        
+        .contact-info {
+            display: flex;
+            gap: 15px;
+            flex-wrap: nowrap;
+            overflow-x: auto;
+            white-space: nowrap;
+            scrollbar-width: none;
+        }
+        
+        .contact-info::-webkit-scrollbar {
+            display: none;
+        }
+        
+        .contact-info-item {
+            display: flex;
+            align-items: center;
+        }
+        
+        .contact-info-item i {
+            margin-right: 6px;
+            font-size: clamp(10px, 1vw, 14px);
+        }
+        
+        /* Header and Navigation */
+        header {
+            background-color: #1e2a2f;
+            padding: 15px 0;
+            position: relative;
+        }
+        
+        nav {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 20px;
+            flex-wrap: nowrap;
+            justify-content: center;
+            overflow-x: auto;
+            padding: 0 10px;
+            white-space: nowrap;
+            scrollbar-width: none;
+        }
+        
+        .nav-links::-webkit-scrollbar {
+            display: none;
+        }
+        
+        .nav-links a {
+            color: white;
+            font-weight: 500;
+            font-size: clamp(12px, 1.2vw, 16px);
+            position: relative;
+            padding: 5px 0;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: #8bc34a;
+        }
+        
+        .nav-links li:nth-child(3) a {
+            color: #8bc34a;
+        }
+        
+        .dropdown-icon {
+            margin-left: 5px;
+            font-size: clamp(8px, 0.8vw, 12px);
+        }
+        
+        /* Mobile Menu */
+        .mobile-menu-toggle {
+            display: none;
+            color: white;
+            font-size: 24px;
+            cursor: pointer;
+            position: absolute;
+            right: 20px;
+            top: 15px;
+            z-index: 1001;
+        }
+        
+        .close-menu {
+            display: none;
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            color: white;
+            font-size: 24px;
+            cursor: pointer;
+            z-index: 1002;
+        }
+        
+        /* Hero Section */
+        .hero {
+            height: 250px;
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://source.unsplash.com/random/1920x350/?spinach,herbs') no-repeat center center/cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            text-align: center;
+        }
+        
+        .hero-content {
+            width: 90%;
+            margin: 0 auto;
+            color: white;
+        }
+        
+        .hero h1 {
+            font-size: clamp(32px, 5vw, 60px);
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+        
+        .breadcrumb {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            justify-content: center;
+            font-size: clamp(12px, 1.2vw, 16px);
+        }
+        
+        .breadcrumb a {
+            color: #8bc34a;
+            transition: color 0.3s;
+        }
+        
+        .breadcrumb a:hover {
+            color: white;
+        }
+        
+        .breadcrumb i {
+            font-size: clamp(8px, 0.8vw, 12px);
+            color: white;
+        }
+        
+        .breadcrumb span {
+            color: white;
+        }
+        
+        /* Products Section */
+        .products-section {
+            padding: 40px 0;
+            background-color: #f9f9f9;
+        }
+        
+        .products-container {
+            display: flex;
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        
+        /* Sidebar */
+        .sidebar {
+            width: 25%;
+            min-width: 250px;
+            background-color: #f5f5f5;
+            padding: 20px;
+            border-radius: 5px;
+            flex-grow: 1;
+        }
+        
+        .search-container {
+            position: relative;
+            margin-bottom: 20px;
+        }
+        
+        .search-input {
+            width: 100%;
+            padding: 10px 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: clamp(12px, 1.2vw, 14px);
+        }
+        
+        .search-btn {
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: none;
+            border: none;
+            color: #999;
+            cursor: pointer;
+            font-size: clamp(12px, 1.2vw, 14px);
+        }
+        
+        .filter-section {
+            margin-bottom: 25px;
+        }
+        
+        .filter-title {
+            display: flex;
+            align-items: center;
+            font-size: clamp(14px, 1.4vw, 16px);
+            font-weight: 600;
+            margin-bottom: 12px;
+            color: #333;
+        }
+        
+        .filter-title::before {
+            content: "▸";
+            color: #8bc34a;
+            margin-right: 8px;
+        }
+        
+        .filter-item {
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            font-size: clamp(12px, 1.2vw, 14px);
+        }
+        
+        .filter-checkbox {
+            margin-right: 8px;
+        }
+        
+        .tags-section {
+            margin-bottom: 25px;
+        }
+        
+        .tag-list {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+        
+        .tag-item {
+            font-size: clamp(12px, 1.2vw, 14px);
+            color: #555;
+            padding: 8px 10px;
+            transition: all 0.3s;
+            cursor: pointer;
+            border-radius: 4px;
+            background-color: transparent;
+        }
+        
+        .tag-item:hover {
+            color: #8bc34a;
+            background-color: rgba(139, 195, 74, 0.1);
+        }
+        
+        .tag-item.active {
+            background-color: #8bc34a;
+            color: white;
+            font-weight: 600;
+        }
+        
+        /* Products Grid */
+        .products-grid {
+            flex: 1;
+            min-width: 280px;
+        }
+        
+        .results-text {
+            color: #777;
+            margin-bottom: 20px;
+            font-size: clamp(12px, 1.2vw, 14px);
+            padding: 10px;
+            background-color: #f0f0f0;
+            border-radius: 5px;
+        }
+        
+        .products-grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 15px;
+        }
+        
+        .product-card {
+            background-color: white;
+            border-radius: 5px;
+            overflow: hidden;
+            position: relative;
+            transition: transform 0.3s, box-shadow 0.3s;
+            margin-bottom: 15px;
+            display: none;
+            cursor: pointer;
+        }
+        
+        .product-card.visible {
+            display: block;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .product-image {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            display: block;
+        }
+        
+        .product-sale {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: #ff6b6b;
+            color: white;
+            padding: 4px 8px;
+            border-radius: 3px;
+            font-size: clamp(10px, 1vw, 12px);
+            font-weight: 600;
+        }
+        
+        .product-rating {
+            display: flex;
+            justify-content: center;
+            margin: 8px 0;
+            color: #ffc107;
+            font-size: clamp(12px, 1.2vw, 14px);
+        }
+        
+        .product-title {
+            text-align: center;
+            font-size: clamp(12px, 1.2vw, 16px);
+            font-weight: 600;
+            color: #333;
+            margin: 8px 0;
+            padding: 0 10px 10px 10px;
+        }
+        
+        .no-products {
+            text-align: center;
+            padding: 40px;
+            color: #999;
+            font-size: 18px;
+            display: none;
+        }
+        
+        .no-products.visible {
+            display: block;
+        }
+
+        /* <CHANGE> Added Product Modal Styles */
+        .product-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            z-index: 2000;
+            overflow-y: auto;
+            padding: 20px;
+        }
+
+        .product-modal.active {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal-content {
+            background-color: white;
+            border-radius: 10px;
+            max-width: 800px;
+            width: 100%;
+            position: relative;
+            animation: modalSlideIn 0.3s ease-out;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        @keyframes modalSlideIn {
+            from {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            width: 35px;
+            height: 35px;
+            background-color: #8bc34a;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            font-size: 20px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s;
+            z-index: 10;
+        }
+
+        .modal-close:hover {
+            background-color: #7ab33d;
+            transform: rotate(90deg);
+        }
+
+        .modal-body {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            padding: 30px;
+        }
+
+        .modal-image-section {
+            width: 100%;
+            text-align: center;
+        }
+
+        .modal-product-image {
+            width: 100%;
+            max-height: 350px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+
+        .modal-info-section {
+            width: 100%;
+        }
+
+        .modal-product-title {
+            font-size: 28px;
+            font-weight: 700;
+            color: #1e2a2f;
+            margin-bottom: 15px;
+        }
+
+        .modal-badge {
+            display: inline-block;
+            background-color: #8bc34a;
+            color: white;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        .modal-product-rating {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            margin-bottom: 15px;
+            color: #ffc107;
+            font-size: 18px;
+        }
+
+        .modal-description {
+            color: #555;
+            line-height: 1.8;
+            margin-bottom: 20px;
+            font-size: 15px;
+        }
+
+        .modal-section-title {
+            font-size: 18px;
+            font-weight: 600;
+            color: #1e2a2f;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .modal-section-title i {
+            color: #8bc34a;
+        }
+
+        .modal-benefits-list {
+            list-style: none;
+            padding: 0;
+            margin-bottom: 20px;
+        }
+
+        .modal-benefits-list li {
+            padding: 8px 0;
+            padding-left: 25px;
+            position: relative;
+            color: #555;
+            line-height: 1.6;
+        }
+
+        .modal-benefits-list li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #8bc34a;
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        .modal-ingredients {
+            background-color: #f9f9f9;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+
+        .modal-ingredients p {
+            color: #555;
+            line-height: 1.8;
+            margin: 0;
+        }
+
+        .modal-contact-btn {
+            display: inline-block;
+            background-color: #8bc34a;
+            color: white;
+            padding: 15px 40px;
+            border-radius: 50px;
+            font-size: 18px;
+            font-weight: 600;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s;
+            border: none;
+            width: 100%;
+            margin-top: 10px;
+        }
+
+        .modal-contact-btn:hover {
+            background-color: #7ab33d;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(139, 195, 74, 0.3);
+        }
+
+        .modal-contact-btn i {
+            margin-left: 10px;
+        }
+
+        @media (max-width: 768px) {
+            .modal-content {
+                margin: 20px;
+            }
+
+            .modal-body {
+                padding: 20px;
+            }
+
+            .modal-product-title {
+                font-size: 22px;
+            }
+
+            .modal-contact-btn {
+                padding: 12px 30px;
+                font-size: 16px;
+            }
+        }
+        
+        /* Newsletter Section */
+        .newsletter-section {
+            background-color: #8bc34a;
+            padding: 20px 0;
+            color: white;
+        }
+        
+        .newsletter-container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+        
+        .newsletter-text {
+            display: flex;
+            align-items: center;
+            font-size: clamp(14px, 1.5vw, 18px);
+            font-weight: 500;
+        }
+        
+        .newsletter-text i {
+            margin-right: 10px;
+            font-size: clamp(16px, 1.8vw, 24px);
+        }
+        
+        .newsletter-form {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        
+        .newsletter-input {
+            padding: 8px 12px;
+            border: none;
+            border-radius: 5px;
+            min-width: 200px;
+            font-size: clamp(12px, 1.2vw, 14px);
+        }
+        
+        .newsletter-btn {
+            background-color: #1e2a2f;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 8px 15px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            font-size: clamp(12px, 1.2vw, 14px);
+        }
+        
+        .newsletter-btn:hover {
+            background-color: #2c3e50;
+        }
+        
+        /* Footer */
+        .footer {
+            background-color: #1e2a2f;
+            color: white;
+            padding: 40px 0 20px;
+        }
+        
+        .footer-top {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 25px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        
+        .footer-badges {
+            display: flex;
+            gap: 12px;
+        }
+        
+        .footer-badge {
+            width: clamp(40px, 5vw, 60px);
+            height: clamp(40px, 5vw, 60px);
+            border-radius: 50%;
+        }
+        
+        .footer-social {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+        
+        .footer-social-text {
+            font-size: clamp(14px, 1.5vw, 16px);
+            margin-right: 15px;
+            color: white;
+        }
+        
+        .footer-social-icons {
+            display: flex;
+            gap: 12px;
+        }
+        
+        .footer-social-icon {
+            width: clamp(30px, 3.5vw, 40px);
+            height: clamp(30px, 3.5vw, 40px);
+            background-color: #8bc34a;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: clamp(14px, 1.5vw, 18px);
+            transition: all 0.3s;
+        }
+        
+        .footer-social-icon:hover {
+            transform: translateY(-5px);
+        }
+
+         /* Footer */
+        .main-footer {
+            text-align: center;
+            padding: 40px 0 0;
+        }
+        
+        .order-btn-large {
+            display: inline-block;
+            background: #8bc34a;
+            color: white;
+            padding: 15px 30px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 18px;
+            transition: all 0.3s;
+            margin-bottom: 40px;
+        }
+        
+        .order-btn-large:hover {
+            background: #7ab33d;
+        }
+        
+        .order-btn-large i {
+            margin-left: 10px;
+        }
+        
+        .footer-dark {
+            background-color: #1e2a2f;
+            color: white;
+            padding: 50px 0 20px;
+        }
+        
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .footer-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+        }
+        
+        .footer-payment {
+            display: flex;
+            align-items: center;
+        }
+        
+        .footer-badges {
+            display: flex;
+            gap: 15px;
+            margin-right: 30px;
+        }
+        
+        .footer-badge {
+            width: 60px;
+            height: 60px;
+        }
+        
+        .payment-text {
+            margin-bottom: 10px;
+            color: white;
+        }
+        
+        .payment-platforms {
+            display: flex;
+            gap: 10px;
+        }
+        
+        .payment-icon {
+            width: 40px;
+            height: 40px;
+            background-color: #8bc34a;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 20px;
+        }
+        
+        .footer-social {
+            text-align: right;
+        }
+        
+        .social-text {
+            margin-bottom: 15px;
+            font-size: 18px;
+            color: white;
+        }
+        
+        .social-icons {
+            display: flex;
+            gap: 15px;
+            justify-content: flex-end;
+        }
+        
+        .social-icon {
+            width: 50px;
+            height: 50px;
+            background-color: #8bc34a;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 24px;
+            transition: all 0.3s;
+        }
+        
+        .social-icon:hover {
+            transform: translateY(-5px);
+        }
+        
+        .footer-columns {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+        }
+        
+        .footer-column {
+            flex: 1;
+            min-width: 300px;
+            margin-bottom: 30px;
+        }
+        
+        .footer-column:first-child {
+            margin-right: 40px;
+        }
+        
+        .footer-column h3 {
+            color: #8bc34a;
+            font-size: 24px;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+        
+        .footer-column p {
+            color: #ccc;
+            line-height: 1.8;
+            margin-bottom: 15px;
+            font-size: 14px;
+        }
+        
+        .contact-info {
+            margin-top: 20px;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+            color: #ccc;
+        }
+        
+        .contact-item i {
+            color: #8bc34a;
+            margin-right: 10px;
+            font-size: 18px;
+            width: 20px;
+        }
+        
+        .contact-item a {
+            color: #ccc;
+            transition: color 0.3s;
+        }
+        
+        .contact-item a:hover {
+            color: #8bc34a;
+        }
+        
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: #ccc;
+            font-size: 14px;
+        }
+        
+        .footer-bottom a {
+            color: #8bc34a;
+        }
+        
+        /* Chat Widgets */
+        .chat-widget {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            z-index: 1000;
+        }
+        
+        .chat-bubble {
+            width: clamp(45px, 5vw, 60px);
+            height: clamp(45px, 5vw, 60px);
+            background-color: #8bc34a;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: clamp(18px, 2vw, 24px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .chat-bubble:hover {
+            transform: scale(1.1);
+        }
+        
+        .whatsapp-widget {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 1000;
+        }
+        
+        .whatsapp-bubble {
+            width: clamp(45px, 5vw, 60px);
+            height: clamp(45px, 5vw, 60px);
+            background-color: #25d366;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: clamp(22px, 2.5vw, 30px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .whatsapp-bubble:hover {
+            transform: scale(1.1);
+        }
+        
+        .scroll-top {
+            position: fixed;
+            bottom: 20px;
+            right: 90px;
+            width: clamp(35px, 3.5vw, 40px);
+            height: clamp(35px, 3.5vw, 40px);
+            background-color: #8bc34a;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: clamp(16px, 1.6vw, 20px);
+            cursor: pointer;
+            z-index: 999;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s;
+        }
+        
+        .scroll-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .scroll-top:hover {
+            transform: translateY(-5px);
+        }
+        
+        /* Mobile Menu Styles */
+        @media (max-width: 992px) {
+            .mobile-menu-toggle {
+                display: block;
+            }
+            
+            .close-menu {
+                display: block;
+            }
+            
+            .nav-links {
+                display: none;
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100vh;
+                background-color: rgba(30, 42, 47, 0.95);
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                z-index: 1000;
+                padding: 50px 20px;
+                gap: 25px;
+            }
+            
+            .nav-links.active {
+                display: flex;
+            }
+            
+            .nav-links a {
+                font-size: 18px;
+            }
+            
+            .products-container {
+                flex-direction: column;
+            }
+            
+            .sidebar {
+                width: 100%;
+                order: 2;
+            }
+            
+            .products-grid {
+                width: 100%;
+                order: 1;
+            }
+            
+            .newsletter-container {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            .newsletter-form {
+                width: 100%;
+            }
+            
+            .newsletter-input {
+                flex: 1;
+            }
+            
+            .footer-social {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            .footer-social-text {
+                margin-right: 0;
+                margin-bottom: 10px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .products-grid-container {
+                grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            }
+            
+            .product-image {
+                height: 150px;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .products-grid-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .newsletter-form {
+                flex-direction: column;
+            }
+            
+            .newsletter-input, .newsletter-btn {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- ... existing code ... -->
+    
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="top-bar-content">
+            <div class="contact-info">
+                <div class="contact-info-item">
+                    <i class="fas fa-phone"></i>
+                    <span>+2347055029151</span>
+                </div>
+                <div class="contact-info-item">
+                    <i class="fas fa-envelope"></i>
+                    <span>dr.ehicure@gmail.com</span>
+                </div>
+            </div>
+            <div class="contact-info-item">
+                <i class="far fa-clock"></i>
+                <span>Always Opened 24/7</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="mobile-menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+            <nav>
+                <ul class="nav-links">
+                    <div class="close-menu">
+                        <i class="fas fa-times"></i>
+                    </div>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Dr Ehi <i class="fas fa-chevron-down dropdown-icon"></i></a></li>
+                    <li><a href="products.html">Our Products</a></li>
+                    <li><a href="reviews.html">Reviews About Clean Life</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Products</h1>
+            <div class="breadcrumb">
+                <a href="index.html">Home</a>
+                <i class="fas fa-chevron-right"></i>
+                <span>All Available Products</span>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Products Section -->
+    <section class="products-section">
+        <div class="products-container">
+            <!-- Sidebar -->
+            <div class="sidebar">
+                <!-- Search Bar -->
+                <div class="search-container">
+                    <input type="text" class="search-input" id="searchInput" placeholder="Search...">
+                    <button class="search-btn">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </div>
+                
+                <!-- Filter Section -->
+                <div class="filter-section">
+                    <h3 class="filter-title">Filter</h3>
+                    <div class="filter-item">
+                        <input type="checkbox" id="filter1" class="filter-checkbox">
+                        <label for="filter1">Herbal Remedies</label>
+                    </div>
+                    <div class="filter-item">
+                        <input type="checkbox" id="filter2" class="filter-checkbox">
+                        <label for="filter2">Supplements</label>
+                    </div>
+                </div>
+                
+                <!-- Product Tags / Diseases -->
+                <div class="tags-section">
+                    <h3 class="filter-title">Diseases & Conditions</h3>
+                    <div class="tag-list">
+                        <div class="tag-item" data-category="all">All Products</div>
+                        <div class="tag-item" data-category="alzheimers">Alzheimer's Disease</div>
+                        <div class="tag-item" data-category="huntingtons">Huntington's Disease</div>
+                        <div class="tag-item" data-category="parkinsons">Parkinson's Disease</div>
+                        <div class="tag-item" data-category="cystic-fibrosis">Cystic Fibrosis</div>
+                        <div class="tag-item" data-category="multiple-sclerosis">Multiple Sclerosis (MS)</div>
+                        <div class="tag-item" data-category="als">Amyotrophic Lateral Sclerosis (ALS)</div>
+                        <div class="tag-item" data-category="cancer">Herbal Cancer Cure</div>
+                        <div class="tag-item" data-category="blood-builder">Herbal Blood Builder</div>
+                        <div class="tag-item" data-category="immune">Immune Booster</div>
+                        <div class="tag-item" data-category="detox">Complete Herbal Detox</div>
+                        <div class="tag-item" data-category="diabetes">Diabetes</div>
+                        <div class="tag-item" data-category="fibroid">Fibroid</div>
+                        <div class="tag-item" data-category="hepatitis">Hepatitis B Remedy</div>
+                        <div class="tag-item" data-category="liver">Liver, Spleen Remedy</div>
+                        <div class="tag-item" data-category="hiv">HIV / AIDS</div>
+                        <div class="tag-item" data-category="infertility">Infertility</div>
+                        <div class="tag-item" data-category="kidney">Kidney Failure</div>
+                        <div class="tag-item" data-category="leukemia">Leukemia</div>
+                        <div class="tag-item" data-category="obesity">Obesity Remedy</div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Products Grid -->
+            <div class="products-grid">
+                <div class="results-text" id="resultsText">Showing all products</div>
+                
+                <div class="products-grid-container" id="productsContainer">
+                    <!-- ... existing code ... -->
+                    
+                    <!-- Alzheimer's Disease Products -->
+                    <div class="product-card" data-category="alzheimers" data-product="alzheimers-1">
+                        <img src="image/Whisk_eac44b353408415b3fc41b5961bf7469dr.jpeg" alt="Alzheimer's Herbal Remedy" class="product-image">
+                        <div class="product-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <h3 class="product-title">Alzheimer's Brain Support Formula</h3>
+                    </div>
+                    
+                    <div class="product-card" data-category="alzheimers" data-product="alzheimers-2">
+                        <img src="image/Whisk_1c4e2941352a09c8c9a46da5393c7593eg.png" alt="Memory Enhancement" class="product-image">
+                        <h3 class="product-title">Memory Enhancement Herbal Blend</h3>
+                    </div>
+                    
+                    <div class="product-card" data-category="alzheimers" data-product="alzheimers-3">
+                        <img src="image/Whisk_qwmxednifdo4ujyj1snlnwotygzmrtlyydnh1so.jpeg" alt="Cognitive Support" class="product-image">
+                        <span class="product-sale">SALE</span>
+                        <h3 class="product-title">Cognitive Function Support</h3>
+                    </div>
+                    
+                    <!-- Huntington's Disease Products -->
+                    <div class="product-card" data-category="huntingtons" data-product="huntingtons-1">
+                        <img src="image/Whisk_d51f2dc6de63940bed74d263182f898cdr.jpeg" alt="Huntington's Support" class="product-image">
+                        <div class="product-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <h3 class="product-title">Huntington's Nervous System Support</h3>
+                    </div>
+                    
+                    <div class="product-card" data-category="huntingtons" data-product="huntingtons-2">
+                        <img src="image/Whisk_7a8e4f9f66078b69d644b1c8b9db78fdeg.png" alt="Movement Support" class="product-image">
+                        <h3 class="product-title">Movement Disorder Herbal Formula</h3>
+                    </div>
+                    
+                    <!-- Parkinson's Disease Products -->
+                    <div class="product-card" data-category="parkinsons" data-product="parkinsons-1">
+                        <img src="image/Whisk_4fa6b49c30f9e26ac964a68c7bd0429aeg.png" alt="Parkinson's Relief" class="product-image">
+                        <div class="product-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <h3 class="product-title">Parkinson's Tremor Relief Formula</h3>
+                    </div>
+                    
+                    <div class="product-card" data-category="parkinsons" data-product="parkinsons-2">
+                        <img src="image/Whisk_4fa6b49c30f9e26ac964a68c7bd0429aeg.png" alt="Balance Support" class="product-image">
+                        <h3 class="product-title">Balance & Coordination Support</h3>
+                    </div>
+                    
+                    <div class="product-card" data-category="parkinsons" data-product="parkinsons-3">
+                        <img src="image/Whisk_d2cc6901e1283aaa1a046f299f367f79eg.png" alt="Mobility Enhancement" class="product-image">
+                        <span class="product-sale">SALE</span>
+                        <h3 class="product-title">Mobility Enhancement Blend</h3>
+                    </div>
+                    
+                    <!-- Cystic Fibrosis Products -->
+                    <div class="product-card" data-category="cystic-fibrosis" data-product="cystic-fibrosis-1">
+                        <img src="image/Whisk_50ed42c72f505bc88a44b9a86cc071eeeg.png" alt="Lung Support" class="product-image">
+                        <div class="product-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <h3 class="product-title">Cystic Fibrosis Lung Support</h3>
+                    </div>
+                    
+                    <div class="product-card" data-category="cystic-fibrosis" data-product="cystic-fibrosis-2">
+                        <img src="image/Whisk_09a2db1fe99f25e8e2d4bb4455227d53dr (1).jpeg" alt="Respiratory Health" class="product-image">
+                        <h3 class="product-title">Respiratory Health Formula</h3>
+                    </div>
+                    
+                    <!-- Multiple Sclerosis Products -->
+                    <div class="product-card" data-category="multiple-sclerosis" data-product="multiple-sclerosis-1">
+                        <img src="image/Whisk_4ded8ff024a1cc4bf5340c86246dc4c6eg.png" alt="MS Support" class="product-image">
+                        <div class="product-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <h3 class="product-title">Multiple Sclerosis Nerve Support</h3>
+                    </div>
+                    
+                    <div class="product-card" data-category="multiple-sclerosis" data-product="multiple-sclerosis-2">
+                        <img src="image/Whisk_c8c2bc254bbcefc858049cb573ae256aeg.png" alt="Energy Support" class="product-image">
+                        <h3 class="product-title">MS Fatigue Relief Formula</h3>
+                    </div>
+                    
+                    <div class="product-card" data-category="multiple-sclerosis" data-product="multiple-sclerosis-3">
+                        <img src="image/Whisk_d71b386735f7827bf1d471b6be832b27eg.png" alt="Muscle Strength" class="product-image">
+                        <h3 class="product-title">Muscle Strength & Coordination</h3>
+                    </div>
+                    
+                    <!-- ALS Products -->
+                    <div class="product-card" data-category="als" data-product="als-1">
+                        <img src="image/Whisk_6ed18cd7fd4e88baab54fbd2fbf79cfceg.png" alt="ALS Support" class="product-image">
+                        <div class="product-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <h3 class="product-title">ALS Motor Neuron Support</h3>
+                    </div>
+                    
+                    <div class="product-card" data-category="als" data-product="als-2">
+                        <img src="image/Whisk_bb54787d37056b9860f47584f0cbac1adr.jpeg" alt="Nerve Cell Support" class="product-image">
+                        <span class="product-sale">SALE</span>
+                        <h3 class="product-title">Nerve Cell Protection Formula</h3>
+                    </div>
+                    
+                    <!-- Cancer Products -->
+                    <div class="product-card" data-category="cancer" data-product="cancer-1">
+                        <img src="image/Whisk_840e9e3aacd1daeb277434939f550719eg.png" alt="Cancer Support" class="product-image">
+                        <div class="product-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <h3 class="product-title">Herbal Cancer Support Formula</h3>
+                    </div>
+                    
+                    <div class="product-card" data-category="cancer" data-product="cancer-2">
+                        <img src="image/Whisk_dcd3bdf3160547cb922479303f10e6d0dr.jpeg" alt="Anti-Cancer Blend" class="product-image">
+                        <h3 class="product-title">Anti-Cancer Herbal Blend</h3>
+                    </div>
+                    
+                    <!-- Blood Builder Products -->
+                    <div class="product-card" data-category="blood-builder" data-product="blood-builder-1">
+                        <img src="image/Whisk_1f3519d7a202608bda14362c66f64629dr.jpeg" alt="Blood Builder" class="product-image">
+                        <div class="product-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <h3 class="product-title">Herbal Blood Builder</h3>
+                    </div>
+                    
+                    <div class="product-card" data-category="blood-builder" data-product="blood-builder-2">
+                        <img src="image/Whisk_1f3519d7a202608bda14362c66f64629dr.jpeg" alt="Iron Rich Formula" class="product-image">
+                        <h3 class="product-title">Iron-Rich Blood Tonic</h3>
+                    </div>
+                    
+                    <!-- Immune Booster Products -->
+                    <div class="product-card" data-category="immune" data-product="immune-1">
+                        <img src="image/Whisk_1f3519d7a202608bda14362c66f64629dr.jpeg" alt="Immune Booster" class="product-image">
+                        <span class="product-sale">SALE</span>
+                        <div class="product-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <h3 class="product-title">Immune System Booster</h3>
+                    </div>
+                    
+                    <div class="product-card" data-category="immune" data-product="immune-2">
+                        <img src="image/Whisk_1f3519d7a202608bda14362c66f64629dr.jpeg" alt="Defense Formula" class="product-image">
+                        <h3 class="product-title">Natural Defense Formula</h3>
+                    </div>
+                    
+                    <!-- Detox Products -->
+                    <div class="product-card" data-category="detox" data-product="detox-1">
+                        <img src="image/33.jpeg" alt="Detox Formula" class="product-image">
+                        <div class="product-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <h3 class="product-title">Complete Herbal Detox - 3 Bottles</h3>
+                    </div>
+                    
+                    <div class="product-card" data-category="detox" data-product="detox-2">
+                        <img src="image/33.jpeg" alt="Body Cleanse" class="product-image">
+                        <h3 class="product-title">Full Body Cleanse System</h3>
+                    </div>
+                    
+                    <!-- Diabetes Products -->
+                    <div class="product-card" data-category="diabetes" data-product="diabetes-1">
+                        <img src="image/33.jpeg" alt="Diabetes Support" class="product-image">
+                        <div class="product-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <h3 class="product-title">Diabetes Blood Sugar Support</h3>
+                    </div>
+                    
+                    <div class="product-card" data-category="diabetes" data-product="diabetes-2">
+                        <img src="image/33.jpeg" alt="Glucose Control" class="product-image">
+                        <h3 class="product-title">Natural Glucose Control</h3>
+                    </div>
+                    
+                    <!-- Fibroid Products -->
+                    <div class="product-card" data-category="fibroid" data-product="fibroid-1">
+                        <img src="image/2222.jpeg" alt="Fibroid Relief" class="product-image">
+                        <span class="product-sale">SALE</span>
+                        <h3 class="product-title">Fibroid Relief Formula</h3>
+                    </div>
+                    
+                    <div class="product-card" data-category="fibroid" data-product="fibroid-2">
+                        <img src="image/2222.jpeg" alt="Uterine Health" class="product-image">
+                        <h3 class="product-title">Uterine Health Support</h3>
+                    </div>
+                    
+                    <!-- Hepatitis Products -->
+                    <div class="product-card" data-category="hepatitis" data-product="hepatitis-1">
+                        <img src="image/222.jpeg" alt="Hepatitis Remedy" class="product-image">
+                        <div class="product-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <h3 class="product-title">Hepatitis B Herbal Remedy</h3>
+                    </div>
+                    
+                    <div class="product-card" data-category="hepatitis" data-product="hepatitis-2">
+                        <img src="image/222.jpeg" alt="Viral Support" class="product-image">
+                        <h3 class="product-title">Hepatitis Herbal Cure</h3>
+                    </div>
+                    
+                    <!-- Liver Products -->
+                    <div class="product-card" data-category="liver" data-product="liver-1">
+                        <img src="image/22.jpeg" alt="Liver Support" class="product-image">
+                        <div class="product-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <h3 class="product-title">Liver & Spleen Remedy</h3>
+                    </div>
+                    
+                    <div class="product-card" data-category="liver" data-product="liver-2">
+                        <img src="image/22.jpeg" alt="Organ Support" class="product-image">
+                        <h3 class="product-title">Liver Detox & Support</h3>
+                    </div>
+                    
+                    <!-- HIV/AIDS Products -->
+                    <div class="product-card" data-category="hiv" data-product="hiv-1">
+                        <img src="image/1111.jpeg" alt="HIV Support" class="product-image">
+                        <div class="product-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <h3 class="product-title">HIV/AIDS Herbal Support</h3>
+                    </div>
+                    
+                    <div class="product-card" data-category="hiv" data-product="hiv-2">
+                        <img src="image/1111.jpeg" alt="Antiviral Formula" class="product-image">
+                        <span class="product-sale">SALE</span>
+                        <h3 class="product-title">Antiviral Immune Support</h3>
+                    </div>
+                    
+                    <!-- Infertility Products -->
+                    <div class="product-card" data-category="infertility" data-product="infertility-1">
+                        <img src="image/111.jpeg" alt="Fertility Support" class="product-image">
+                        <div class="product-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <h3 class="product-title">Infertility Herbal Solution</h3>
+                    </div>
+                    
+                    <div class="product-card" data-category="infertility" data-product="infertility-2">
+                        <img src="image/111.jpeg" alt="Conception Support" class="product-image">
+                        <h3 class="product-title">Natural Fertility Booster</h3>
+                    </div>
+                    
+                    <!-- Kidney Products -->
+                    <div class="product-card" data-category="kidney" data-product="kidney-1">
+                        <img src="image/11.jpeg" alt="Kidney Support" class="product-image">
+                        <div class="product-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <h3 class="product-title">Kidney Failure Support Formula</h3>
+                    </div>
+                    
+                    <div class="product-card" data-category="kidney" data-product="kidney-2">
+                        <img src="image/11.jpeg" alt="Renal Health" class="product-image">
+                        <h3 class="product-title">Renal Health & Repair</h3>
+                    </div>
+                    
+                    <!-- Leukemia Products -->
+                    <div class="product-card" data-category="leukemia" data-product="leukemia-1">
+                        <img src="image/33.jpeg" alt="Leukemia Support" class="product-image">
+                        <span class="product-sale">SALE</span>
+                        <div class="product-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <h3 class="product-title">Leukemia Herbal Support</h3>
+                    </div>
+                    
+                    <div class="product-card" data-category="leukemia" data-product="leukemia-2">
+                        <img src="himage/33.jpeg" alt="Blood Cancer Support" class="product-image">
+                        <h3 class="product-title">Blood Cancer Herbal Formula</h3>
+                    </div>
+                    
+                    <!-- Obesity Products -->
+                    <div class="product-card" data-category="obesity" data-product="obesity-1">
+                        <img src="image/33.jpeg" alt="Weight Loss" class="product-image">
+                        <div class="product-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <h3 class="product-title">Obesity Remedy (BMI > 30)</h3>
+                    </div>
+                    
+                    <div class="product-card" data-category="obesity" data-product="obesity-2">
+                        <img src="image/33.jpeg" alt="Metabolism Booster" class="product-image">
+                        <h3 class="product-title">Natural Weight Management</h3>
+                    </div>
+                </div>
+                
+                <div class="no-products" id="noProducts">
+                    <i class="fas fa-box-open" style="font-size: 48px; margin-bottom: 20px; color: #ccc;"></i>
+                    <p>No products found for this category.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- <CHANGE> Added Product Modal -->
+    <div class="product-modal" id="productModal">
+        <div class="modal-content">
+            <button class="modal-close" id="modalClose">
+                <i class="fas fa-times"></i>
+            </button>
+            <div class="modal-body">
+                <div class="modal-image-section">
+                    <img id="modalImage" src="/placeholder.svg" alt="" class="modal-product-image">
+                </div>
+                <div class="modal-info-section">
+                    <span class="modal-badge">
+                        <i class="fas fa-leaf"></i> 100% Natural Herbal Blend
+                    </span>
+                    <h2 class="modal-product-title" id="modalTitle"></h2>
+                    <div class="modal-product-rating" id="modalRating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <span style="color: #666; margin-left: 10px;">(5.0 Rating)</span>
+                    </div>
+                    <p class="modal-description" id="modalDescription"></p>
+                    
+                    <h3 class="modal-section-title">
+                        <i class="fas fa-check-circle"></i>
+                        Key Benefits
+                    </h3>
+                    <ul class="modal-benefits-list" id="modalBenefits"></ul>
+                    
+                    <h3 class="modal-section-title">
+                        <i class="fas fa-seedling"></i>
+                        Natural Ingredients
+                    </h3>
+                    <div class="modal-ingredients">
+                        <p id="modalIngredients"></p>
+                    </div>
+                    
+                    <button class="modal-contact-btn" onclick="window.location.href='contact.html'">
+                        Contact Us to Buy <i class="fas fa-arrow-right"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- ... existing code ... -->
+    
+    <!-- Newsletter Section -->
+    <section class="newsletter-section">
+        <div class="newsletter-container">
+            <div class="newsletter-text">
+                <i class="far fa-envelope"></i>
+                <span>Subscribe weekly newsletter</span>
+            </div>
+            <div class="newsletter-form">
+                <input type="email" class="newsletter-input" placeholder="Your email address">
+                <button class="newsletter-btn">Subscribe</button>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Main Footer -->
+    <footer class="main-footer">
+        <a href="#" class="order-btn-large">Place An Order Now At Dr Ehi Herbal Cure <i class="fas fa-arrow-right"></i></a>
+        
+        <div class="footer-dark">
+            <div class="footer-container">
+                <div class="footer-top">
+                    <div class="footer-payment">
+                        <div class="footer-badges">
+                            <img src="/placeholder.svg?height=60&width=60" alt="Herbal Product Badge" class="footer-badge">
+                            <img src="/placeholder.svg?height=60&width=60" alt="Quality Badge" class="footer-badge">
+                        </div>
+                        <div>
+                            <p class="payment-text">Payment</p>
+                            <p class="payment-text">These Are Our Payment Platforms</p>
+                            <div class="payment-platforms">
+                                <div class="payment-icon">
+                                    <span>Z</span>
+                                </div>
+                                <div class="payment-icon">
+                                    <span>V</span>
+                                </div>
+                                <div class="payment-icon">
+                                    <i class="fab fa-paypal"></i>
+                                </div>
+                                <div class="payment-icon">
+                                    <i class="fas fa-dollar-sign"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="footer-social">
+                        <p class="social-text">Follow Dr Ehi Social Media —</p>
+                        <div class="social-icons">
+                            <a href="#" class="social-icon">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <a href="#" class="social-icon">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="footer-columns">
+                    <div class="footer-column">
+                        <h3>About Clean Life</h3>
+                        <p>Dr Ehi Herbal Cure:</p>
+                        <p>I am Dr Ehi by name. I'm a herbal medicinal from Africa , I have been in this herbal work for years now and I have cured a lot of persons from various diseases, my grandmother was once a healer (traditional medicinal) at a little age I started assisting her with the work and then she passed away and left the work with me, God gave me this gift to heal his people and it has being my main aim to heal God's people and do his work to please only him who put me to earth for this purpose. My traditional home made herbal medicine will help eradicate your virus within 14 days, you won't be able to trace any symptoms and once you go for check up behold your results will be confirmed negative. You just need to have faith and the believe in my medicine as faith conquers it all. I am a very simple and generous kind man with a good heart, A father as well. I am gifted with the amazing gift of using Herbs and roots to Cure different type of illness. This is no magic. You just have to believe that there are root and herbs that are very active for the body. I CURE, BUT GOD HEALS. There are lots of herbal plants and roots added together with a little seamoss to make the herbal cure. The reason for the little seamoss, is to enable colon cleanse and to work effectively with no other side effects Meanwhile, herbal plants like Aloe vera, Cinnamon, Bitter melon, Milk thistle, Fenugreek, Gymnena, Ginger. Are very useful. These herbs are natural and are made from real roots and plants that does not have any side effects at all.</p>
+                        <p>I would Say that Herbal medicine is a part and parcel of and sometimes synonymous with traditional medicine. It is the oldest and still the most widely used system of medicine in the world today. It is used in all societies and is common to all cultures.</p>
+                    </div>
+                    
+                    <div class="footer-column">
+                        <h3>Contact With Dr Ehi Below Information:</h3>
+                        <div class="contact-info">
+                            <div class="contact-item">
+                                <i class="fas fa-envelope"></i>
+                                <p>Private Email: <a href="mailto:dr.ehicure@gmail.com">dr.ehicure@gmail.com</a></p>
+                            </div>
+                            <div class="contact-item">
+                                <i class="fas fa-phone-alt"></i>
+                                <p><a href="tel:+2347055029151">+2347055029151</a></p>
+                            </div>
+                            <div class="contact-item">
+                                <i class="fas fa-info-circle"></i>
+                                <p>Dr Ehi Herbal Cure</p>
+                            </div>
+                            <div class="contact-item">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <p>Location: 729 Bayberry ct Nashville, North Carolina (NC) 27856</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="footer-bottom">
+                    <p>2025 © All Rights Reserved - <a href="#">Dr Ehi Online</a></p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Chat Widget -->
+    <div class="chat-widget">
+        <div class="chat-bubble">
+            <i class="far fa-comment-dots"></i>
+        </div>
+    </div>
+    
+    <!-- WhatsApp Widget -->
+    <div class="whatsapp-widget">
+        <div class="whatsapp-bubble">
+            <i class="fab fa-whatsapp"></i>
+        </div>
+    </div>
+    
+    <!-- Scroll Top Button -->
+    <div class="scroll-top">
+        <i class="fas fa-chevron-up"></i>
+    </div>
+    
+    <script>
+        // <CHANGE> Added product data with detailed information
+        const productData = {
+            'alzheimers-1': {
+                title: "Alzheimer's Brain Support Formula",
+                description: "A powerful blend of traditional African herbs and natural remedies specifically formulated to support cognitive function and brain health. This 100% natural herbal remedy combines ancient healing wisdom with carefully selected botanical ingredients to help manage symptoms associated with Alzheimer's disease.",
+                benefits: [
+                    "Supports memory retention and cognitive clarity",
+                    "Promotes healthy brain cell function and neuroprotection",
+                    "Helps reduce mental fog and confusion",
+                    "Contains powerful antioxidants for brain health",
+                    "100% natural with no harmful side effects"
+                ],
+                ingredients: "Ginkgo Biloba, Bacopa Monnieri, Turmeric Root, Ginger, Lion's Mane Mushroom, Seamoss, and other proprietary African herbs known for their neuroprotective properties."
+            },
+            'alzheimers-2': {
+                title: "Memory Enhancement Herbal Blend",
+                description: "This traditional herbal remedy is crafted from pure natural ingredients to enhance memory function and support overall brain health. Our unique blend of herbs works synergistically to improve cognitive performance and mental clarity.",
+                benefits: [
+                    "Enhances short-term and long-term memory",
+                    "Improves focus and concentration",
+                    "Supports healthy blood flow to the brain",
+                    "Natural and safe for long-term use",
+                    "Helps maintain mental sharpness"
+                ],
+                ingredients: "Rosemary, Sage, Gotu Kola, Holy Basil, Ashwagandha, Seamoss, and traditional African memory-enhancing herbs."
+            },
+            'alzheimers-3': {
+                title: "Cognitive Function Support",
+                description: "A comprehensive herbal formula designed to support and maintain healthy cognitive function. This natural remedy combines the healing power of African herbs with modern understanding of brain health to provide holistic support for those experiencing cognitive challenges.",
+                benefits: [
+                    "Supports overall cognitive health and function",
+                    "Helps maintain mental clarity and alertness",
+                    "Promotes healthy neurotransmitter balance",
+                    "Reduces oxidative stress in the brain",
+                    "Made from 100% natural herbal ingredients"
+                ],
+                ingredients: "Brahmi, Rhodiola, Green Tea Extract, Curcumin, Omega-3 rich herbs, Seamoss, and specialized African cognitive support herbs."
+            },
+            'huntingtons-1': {
+                title: "Huntington's Nervous System Support",
+                description: "A specialized herbal blend formulated to support the nervous system and help manage symptoms associated with Huntington's disease. This natural remedy combines traditional African healing herbs with ingredients known for their neuroprotective and calming properties.",
+                benefits: [
+                    "Supports healthy nervous system function",
+                    "Helps manage involuntary movements",
+                    "Promotes emotional balance and mental clarity",
+                    "Contains natural neuroprotective compounds",
+                    "100% herbal with no synthetic additives"
+                ],
+                ingredients: "Valerian Root, Passionflower, Skullcap, St. John's Wort, Mucuna Pruriens, Seamoss, and traditional African nervous system herbs."
+            },
+            'huntingtons-2': {
+                title: "Movement Disorder Herbal Formula",
+                description: "This powerful natural remedy is specifically designed to address movement disorders through a blend of carefully selected herbs. Our formula supports muscle control, coordination, and overall neurological health using time-tested herbal ingredients.",
+                benefits: [
+                    "Supports smooth muscle movement and coordination",
+                    "Helps reduce involuntary muscle contractions",
+                    "Promotes neurological health and balance",
+                    "Natural anti-inflammatory properties",
+                    "Safe for long-term use with no side effects"
+                ],
+                ingredients: "Cramp Bark, Black Cohosh, Magnesium-rich herbs, Kava Kava, Seamoss, and proprietary African movement support herbs."
+            },
+            'parkinsons-1': {
+                title: "Parkinson's Tremor Relief Formula",
+                description: "A natural herbal remedy specifically formulated to help manage tremors and support overall neurological health in individuals with Parkinson's disease. This blend combines traditional African herbs with ingredients known for their ability to support dopamine production and reduce tremors.",
+                benefits: [
+                    "Helps reduce tremors and shaking",
+                    "Supports natural dopamine production",
+                    "Improves muscle control and coordination",
+                    "Promotes overall neurological health",
+                    "100% natural herbal ingredients"
+                ],
+                ingredients: "Mucuna Pruriens (natural L-DOPA source), Ginkgo Biloba, Turmeric, Coenzyme Q10 herbs, Seamoss, and traditional African anti-tremor herbs."
+            },
+            'parkinsons-2': {
+                title: "Balance & Coordination Support",
+                description: "This herbal formula is designed to support balance, coordination, and overall motor function. Our natural blend helps address the physical challenges associated with Parkinson's disease through the power of traditional herbal medicine.",
+                benefits: [
+                    "Improves balance and stability",
+                    "Enhances coordination and motor skills",
+                    "Supports muscle strength and flexibility",
+                    "Reduces stiffness and rigidity",
+                    "Natural and safe for daily use"
+                ],
+                ingredients: "Ginger Root, Cayenne, Gotu Kola, Bacopa, Ashwagandha, Seamoss, and specialized African balance-supporting herbs."
+            },
+            'parkinsons-3': {
+                title: "Mobility Enhancement Blend",
+                description: "A comprehensive herbal solution designed to enhance mobility and support overall physical function. This natural remedy combines powerful herbs that work together to improve movement, reduce stiffness, and promote better quality of life.",
+                benefits: [
+                    "Enhances overall mobility and movement",
+                    "Reduces muscle stiffness and rigidity",
+                    "Supports joint health and flexibility",
+                    "Promotes better physical function",
+                    "Made from pure natural herbs"
+                ],
+                ingredients: "Boswellia, Devil's Claw, Willow Bark, Turmeric, Ginger, Seamoss, and traditional African mobility herbs."
+            },
+            'cystic-fibrosis-1': {
+                title: "Cystic Fibrosis Lung Support",
+                description: "A powerful herbal formula specifically designed to support respiratory health and lung function. This natural remedy combines traditional African herbs with ingredients known for their ability to support clear breathing and healthy lung tissue.",
+                benefits: [
+                    "Supports healthy lung function and capacity",
+                    "Helps clear respiratory passages",
+                    "Promotes easier breathing",
+                    "Contains natural anti-inflammatory compounds",
+                    "100% herbal with no harmful additives"
+                ],
+                ingredients: "Mullein Leaf, Lobelia, Elecampane, Thyme, Oregano, Seamoss, and traditional African respiratory support herbs."
+            },
+            'cystic-fibrosis-2': {
+                title: "Respiratory Health Formula",
+                description: "This comprehensive herbal blend is formulated to support overall respiratory health and function. Our natural remedy helps maintain clear airways and supports the body's natural ability to manage respiratory challenges.",
+                benefits: [
+                    "Supports clear and healthy airways",
+                    "Promotes optimal respiratory function",
+                    "Helps reduce mucus buildup",
+                    "Natural immune system support",
+                    "Safe for long-term respiratory care"
+                ],
+                ingredients: "Eucalyptus, Peppermint, Licorice Root, Marshmallow Root, Ginger, Seamoss, and specialized African lung health herbs."
+            },
+            'multiple-sclerosis-1': {
+                title: "Multiple Sclerosis Nerve Support",
+                description: "A specialized herbal formula designed to support nerve health and function in individuals with Multiple Sclerosis. This natural remedy combines powerful herbs that help protect nerve cells and support overall neurological health.",
+                benefits: [
+                    "Supports healthy nerve function and protection",
+                    "Helps reduce nerve inflammation",
+                    "Promotes myelin sheath health",
+                    "Supports overall neurological wellness",
+                    "100% natural herbal ingredients"
+                ],
+                ingredients: "Lion's Mane Mushroom, Ginkgo Biloba, Turmeric, Omega-3 rich herbs, B-vitamin herbs, Seamoss, and traditional African nerve support herbs."
+            },
+            'multiple-sclerosis-2': {
+                title: "MS Fatigue Relief Formula",
+                description: "This natural herbal blend is specifically formulated to help combat fatigue and boost energy levels in individuals with Multiple Sclerosis. Our remedy supports natural energy production and helps reduce the overwhelming tiredness associated with MS.",
+                benefits: [
+                    "Helps reduce chronic fatigue",
+                    "Supports natural energy production",
+                    "Improves stamina and endurance",
+                    "Promotes better sleep quality",
+                    "Natural and safe energy support"
+                ],
+                ingredients: "Rhodiola Rosea, Ashwagandha, Ginseng, Cordyceps, Green Tea, Seamoss, and traditional African energy-boosting herbs."
+            },
+            'multiple-sclerosis-3': {
+                title: "Muscle Strength & Coordination",
+                description: "A comprehensive herbal formula designed to support muscle strength, coordination, and overall physical function. This natural remedy helps address the muscle weakness and coordination challenges often experienced with Multiple Sclerosis.",
+                benefits: [
+                    "Supports muscle strength and tone",
+                    "Improves coordination and balance",
+                    "Reduces muscle spasms and weakness",
+                    "Promotes better motor control",
+                    "Made from pure natural herbs"
+                ],
+                ingredients: "Creatine-rich herbs, Magnesium sources, Valerian, Cramp Bark, Ginger, Seamoss, and specialized African muscle support herbs."
+            },
+            'als-1': {
+                title: "ALS Motor Neuron Support",
+                description: "A powerful herbal formula specifically designed to support motor neuron health and function. This natural remedy combines traditional African herbs with ingredients known for their neuroprotective properties to help manage symptoms associated with ALS.",
+                benefits: [
+                    "Supports motor neuron health and function",
+                    "Helps protect nerve cells from damage",
+                    "Promotes better muscle control",
+                    "Contains powerful antioxidants",
+                    "100% natural herbal ingredients"
+                ],
+                ingredients: "Lion's Mane Mushroom, Bacopa, Ginkgo Biloba, Turmeric, CoQ10 herbs, Seamoss, and traditional African motor neuron support herbs."
+            },
+            'als-2': {
+                title: "Nerve Cell Protection Formula",
+                description: "This specialized herbal blend is formulated to provide comprehensive protection and support for nerve cells. Our natural remedy helps maintain nerve health and supports the body's natural ability to protect neurological function.",
+                benefits: [
+                    "Provides neuroprotective support",
+                    "Helps maintain nerve cell health",
+                    "Supports overall neurological function",
+                    "Natural anti-inflammatory properties",
+                    "Safe for long-term nerve support"
+                ],
+                ingredients: "Alpha-Lipoic Acid herbs, Acetyl-L-Carnitine sources, Curcumin, Resveratrol, Seamoss, and specialized African neuroprotective herbs."
+            },
+            'cancer-1': {
+                title: "Herbal Cancer Support Formula",
+                description: "A comprehensive herbal blend designed to support the body's natural defenses and overall health during cancer treatment. This natural remedy combines powerful African herbs with ingredients known for their immune-boosting and antioxidant properties.",
+                benefits: [
+                    "Supports immune system function",
+                    "Contains powerful antioxidants",
+                    "Helps reduce inflammation",
+                    "Supports overall body wellness",
+                    "100% natural herbal ingredients"
+                ],
+                ingredients: "Turmeric, Green Tea, Milk Thistle, Essiac herbs, Graviola, Seamoss, and traditional African immune-supporting herbs."
+            },
+            'cancer-2': {
+                title: "Anti-Cancer Herbal Blend",
+                description: "This powerful natural remedy is formulated with herbs traditionally used to support the body's fight against cancer. Our blend combines ancient African healing wisdom with ingredients known for their potential anti-cancer properties.",
+                benefits: [
+                    "Supports natural cancer-fighting mechanisms",
+                    "Boosts immune system function",
+                    "Provides powerful antioxidant protection",
+                    "Helps detoxify the body",
+                    "Natural and safe herbal support"
+                ],
+                ingredients: "Burdock Root, Sheep Sorrel, Slippery Elm, Turkey Tail Mushroom, Astragalus, Seamoss, and specialized African anti-cancer herbs."
+            },
+            'blood-builder-1': {
+                title: "Herbal Blood Builder",
+                description: "A natural herbal formula designed to support healthy blood production and improve overall blood quality. This remedy combines iron-rich herbs with ingredients that support optimal blood health and circulation.",
+                benefits: [
+                    "Supports healthy blood production",
+                    "Increases iron levels naturally",
+                    "Improves energy and reduces fatigue",
+                    "Promotes healthy circulation",
+                    "100% natural blood-building herbs"
+                ],
+                ingredients: "Nettle Leaf, Yellow Dock, Dandelion, Beet Root, Spirulina, Seamoss, and traditional African blood-building herbs."
+            },
+            'blood-builder-2': {
+                title: "Iron-Rich Blood Tonic",
+                description: "This powerful herbal tonic is rich in natural iron and other essential nutrients that support healthy blood formation. Our formula helps combat anemia and supports overall blood health through the power of natural herbs.",
+                benefits: [
+                    "Rich in natural iron and minerals",
+                    "Supports red blood cell production",
+                    "Helps combat anemia naturally",
+                    "Improves oxygen delivery to tissues",
+                    "Natural and easily absorbed"
+                ],
+                ingredients: "Blackstrap Molasses herbs, Parsley, Watercress, Alfalfa, Chlorella, Seamoss, and specialized African iron-rich herbs."
+            },
+            'immune-1': {
+                title: "Immune System Booster",
+                description: "A comprehensive herbal formula designed to strengthen and support the immune system. This natural remedy combines powerful immune-boosting herbs that help the body defend against illness and maintain optimal health.",
+                benefits: [
+                    "Strengthens immune system function",
+                    "Helps fight infections naturally",
+                    "Supports overall body defense",
+                    "Promotes faster recovery",
+                    "100% natural immune support"
+                ],
+                ingredients: "Echinacea, Elderberry, Astragalus, Garlic, Ginger, Seamoss, and traditional African immune-boosting herbs."
+            },
+            'immune-2': {
+                title: "Natural Defense Formula",
+                description: "This powerful herbal blend is formulated to enhance the body's natural defense mechanisms. Our remedy supports immune function and helps maintain optimal health through a combination of time-tested herbal ingredients.",
+                benefits: [
+                    "Enhances natural immune response",
+                    "Supports white blood cell function",
+                    "Provides antioxidant protection",
+                    "Helps maintain overall wellness",
+                    "Safe for daily immune support"
+                ],
+                ingredients: "Reishi Mushroom, Shiitake, Maitake, Turmeric, Oregano Oil, Seamoss, and specialized African defense herbs."
+            },
+            'detox-1': {
+                title: "Complete Herbal Detox - 3 Bottles",
+                description: "A comprehensive three-bottle detox system designed to cleanse the body of toxins and support optimal organ function. This natural remedy provides a complete detoxification experience through carefully selected herbal ingredients.",
+                benefits: [
+                    "Complete body detoxification",
+                    "Supports liver and kidney function",
+                    "Helps eliminate toxins naturally",
+                    "Improves energy and vitality",
+                    "100% natural cleansing herbs"
+                ],
+                ingredients: "Milk Thistle, Dandelion Root, Burdock, Turmeric, Cilantro, Seamoss, and traditional African detox herbs."
+            },
+            'detox-2': {
+                title: "Full Body Cleanse System",
+                description: "This powerful herbal cleanse system is designed to support the body's natural detoxification processes. Our formula helps eliminate accumulated toxins and supports overall health and wellness.",
+                benefits: [
+                    "Supports natural detoxification",
+                    "Cleanses digestive system",
+                    "Promotes healthy organ function",
+                    "Improves skin clarity",
+                    "Natural and gentle cleansing"
+                ],
+                ingredients: "Psyllium Husk, Cascara Sagrada, Senna Leaf, Aloe Vera, Ginger, Seamoss, and specialized African cleansing herbs."
+            },
+            'diabetes-1': {
+                title: "Diabetes Blood Sugar Support",
+                description: "A natural herbal formula specifically designed to support healthy blood sugar levels. This remedy combines traditional African herbs with ingredients known for their ability to help regulate glucose metabolism.",
+                benefits: [
+                    "Supports healthy blood sugar levels",
+                    "Helps regulate glucose metabolism",
+                    "Supports insulin sensitivity",
+                    "Promotes pancreatic health",
+                    "100% natural herbal ingredients"
+                ],
+                ingredients: "Bitter Melon, Gymnema Sylvestre, Cinnamon, Fenugreek, Berberine herbs, Seamoss, and traditional African blood sugar herbs."
+            },
+            'diabetes-2': {
+                title: "Natural Glucose Control",
+                description: "This powerful herbal blend is formulated to help maintain healthy glucose levels naturally. Our remedy supports the body's ability to regulate blood sugar and promotes overall metabolic health.",
+                benefits: [
+                    "Helps maintain healthy glucose levels",
+                    "Supports natural insulin function",
+                    "Promotes metabolic health",
+                    "Reduces sugar cravings",
+                    "Natural and safe for daily use"
+                ],
+                ingredients: "Alpha-Lipoic Acid herbs, Chromium-rich plants, Banaba Leaf, Holy Basil, Turmeric, Seamoss, and specialized African glucose control herbs."
+            },
+            'fibroid-1': {
+                title: "Fibroid Relief Formula",
+                description: "A specialized herbal formula designed to support uterine health and help manage fibroids naturally. This remedy combines traditional African herbs with ingredients known for their ability to support hormonal balance and reduce fibroid symptoms.",
+                benefits: [
+                    "Supports uterine health",
+                    "Helps reduce fibroid size naturally",
+                    "Promotes hormonal balance",
+                    "Reduces heavy bleeding",
+                    "100% natural herbal ingredients"
+                ],
+                ingredients: "Vitex (Chasteberry), Red Raspberry Leaf, Dandelion, Milk Thistle, Turmeric, Seamoss, and traditional African fibroid herbs."
+            },
+            'fibroid-2': {
+                title: "Uterine Health Support",
+                description: "This comprehensive herbal blend is formulated to support overall uterine health and function. Our natural remedy helps maintain hormonal balance and supports the body's natural ability to manage uterine conditions.",
+                benefits: [
+                    "Supports overall uterine health",
+                    "Promotes hormonal balance",
+                    "Helps reduce inflammation",
+                    "Supports menstrual health",
+                    "Natural and safe for women's health"
+                ],
+                ingredients: "Black Cohosh, Dong Quai, Wild Yam, Cramp Bark, Ginger, Seamoss, and specialized African women's health herbs."
+            },
+            'hepatitis-1': {
+                title: "Hepatitis B Herbal Remedy",
+                description: "A powerful herbal formula specifically designed to support liver health and help manage hepatitis B. This natural remedy combines traditional African herbs with ingredients known for their liver-protective and antiviral properties.",
+                benefits: [
+                    "Supports liver health and function",
+                    "Helps protect liver cells",
+                    "Supports natural antiviral defenses",
+                    "Promotes liver regeneration",
+                    "100% natural herbal ingredients"
+                ],
+                ingredients: "Milk Thistle, Dandelion Root, Turmeric, Licorice Root, Schisandra, Seamoss, and traditional African liver support herbs."
+            },
+            'hepatitis-2': {
+                title: "Hepatitis Herbal Cure",
+                description: "This comprehensive herbal blend is formulated to support the body's fight against hepatitis. Our natural remedy helps protect the liver, supports immune function, and promotes overall liver health.",
+                benefits: [
+                    "Supports liver protection and healing",
+                    "Boosts immune system function",
+                    "Helps reduce liver inflammation",
+                    "Promotes liver detoxification",
+                    "Natural and safe liver support"
+                ],
+                ingredients: "Artichoke, Burdock Root, Yellow Dock, Reishi Mushroom, Astragalus, Seamoss, and specialized African hepatitis herbs."
+            },
+            'liver-1': {
+                title: "Liver & Spleen Remedy",
+                description: "A specialized herbal formula designed to support both liver and spleen health. This natural remedy combines powerful herbs that help protect these vital organs and support their optimal function.",
+                benefits: [
+                    "Supports liver and spleen health",
+                    "Promotes organ detoxification",
+                    "Helps protect organ cells",
+                    "Supports overall digestive health",
+                    "100% natural herbal ingredients"
+                ],
+                ingredients: "Milk Thistle, Dandelion, Turmeric, Burdock Root, Yellow Dock, Seamoss, and traditional African organ support herbs."
+            },
+            'liver-2': {
+                title: "Liver Detox & Support",
+                description: "This powerful herbal blend is formulated to support liver detoxification and overall liver health. Our remedy helps the liver process and eliminate toxins while supporting its regenerative capabilities.",
+                benefits: [
+                    "Supports liver detoxification",
+                    "Promotes liver cell regeneration",
+                    "Helps eliminate toxins",
+                    "Supports bile production",
+                    "Natural and gentle liver care"
+                ],
+                ingredients: "Artichoke Leaf, Boldo, Chicory Root, Schisandra, Licorice Root, Seamoss, and specialized African liver detox herbs."
+            },
+            'hiv-1': {
+                title: "HIV/AIDS Herbal Support",
+                description: "A comprehensive herbal formula designed to support immune function and overall health in individuals with HIV/AIDS. This natural remedy combines powerful African herbs with ingredients known for their immune-boosting and antiviral properties.",
+                benefits: [
+                    "Supports immune system function",
+                    "Helps maintain viral load",
+                    "Promotes overall body wellness",
+                    "Supports energy and vitality",
+                    "100% natural herbal ingredients"
+                ],
+                ingredients: "Astragalus, Reishi Mushroom, Olive Leaf, Cat's Claw, Echinacea, Seamoss, and traditional African immune support herbs."
+            },
+            'hiv-2': {
+                title: "Antiviral Immune Support",
+                description: "This powerful herbal blend is formulated to provide comprehensive immune support and natural antiviral protection. Our remedy helps strengthen the body's defenses and supports overall health and wellness.",
+                benefits: [
+                    "Provides natural antiviral support",
+                    "Strengthens immune defenses",
+                    "Supports overall health",
+                    "Helps maintain energy levels",
+                    "Natural and safe immune support"
+                ],
+                ingredients: "Elderberry, Garlic, Ginger, Turmeric, Oregano Oil, Seamoss, and specialized African antiviral herbs."
+            },
+            'infertility-1': {
+                title: "Infertility Herbal Solution",
+                description: "A specialized herbal formula designed to support reproductive health and fertility. This natural remedy combines traditional African herbs with ingredients known for their ability to support hormonal balance and reproductive function.",
+                benefits: [
+                    "Supports reproductive health",
+                    "Promotes hormonal balance",
+                    "Enhances fertility naturally",
+                    "Supports overall reproductive function",
+                    "100% natural herbal ingredients"
+                ],
+                ingredients: "Vitex (Chasteberry), Maca Root, Tribulus, Red Clover, Dong Quai, Seamoss, and traditional African fertility herbs."
+            },
+            'infertility-2': {
+                title: "Natural Fertility Booster",
+                description: "This comprehensive herbal blend is formulated to boost fertility and support conception. Our natural remedy helps optimize reproductive health and supports the body's natural ability to conceive.",
+                benefits: [
+                    "Boosts fertility naturally",
+                    "Supports egg and sperm quality",
+                    "Promotes hormonal balance",
+                    "Enhances reproductive health",
+                    "Natural and safe fertility support"
+                ],
+                ingredients: "Royal Jelly herbs, Ashwagandha, Shatavari, Ginseng, Fenugreek, Seamoss, and specialized African conception herbs."
+            },
+            'kidney-1': {
+                title: "Kidney Failure Support Formula",
+                description: "A powerful herbal formula specifically designed to support kidney health and function. This natural remedy combines traditional African herbs with ingredients known for their ability to support kidney filtration and overall renal health.",
+                benefits: [
+                    "Supports kidney function and health",
+                    "Helps improve filtration",
+                    "Promotes kidney cell protection",
+                    "Supports overall renal wellness",
+                    "100% natural herbal ingredients"
+                ],
+                ingredients: "Nettle Leaf, Dandelion, Parsley, Marshmallow Root, Ginger, Seamoss, and traditional African kidney support herbs."
+            },
+            'kidney-2': {
+                title: "Renal Health & Repair",
+                description: "This comprehensive herbal blend is formulated to support kidney repair and overall renal health. Our natural remedy helps protect kidney cells and supports the body's natural healing processes.",
+                benefits: [
+                    "Supports kidney repair and healing",
+                    "Promotes healthy kidney function",
+                    "Helps reduce kidney inflammation",
+                    "Supports urinary tract health",
+                    "Natural and safe kidney care"
+                ],
+                ingredients: "Corn Silk, Uva Ursi, Cranberry, Juniper Berry, Turmeric, Seamoss, and specialized African renal health herbs."
+            },
+            'leukemia-1': {
+                title: "Leukemia Herbal Support",
+                description: "A specialized herbal formula designed to support the body during leukemia treatment. This natural remedy combines powerful African herbs with ingredients known for their immune-boosting and blood-supporting properties.",
+                benefits: [
+                    "Supports immune system function",
+                    "Helps maintain healthy blood cells",
+                    "Provides antioxidant protection",
+                    "Supports overall body wellness",
+                    "100% natural herbal ingredients"
+                ],
+                ingredients: "Astragalus, Turmeric, Green Tea, Reishi Mushroom, Milk Thistle, Seamoss, and traditional African blood support herbs."
+            },
+            'leukemia-2': {
+                title: "Blood Cancer Herbal Formula",
+                description: "This powerful herbal blend is formulated to support the body's fight against blood cancer. Our natural remedy helps support immune function and promotes overall blood health.",
+                benefits: [
+                    "Supports natural cancer-fighting mechanisms",
+                    "Promotes healthy blood cell production",
+                    "Boosts immune system function",
+                    "Provides powerful antioxidants",
+                    "Natural and safe blood support"
+                ],
+                ingredients: "Essiac herbs, Cat's Claw, Pau D'Arco, Graviola, Spirulina, Seamoss, and specialized African blood cancer herbs."
+            },
+            'obesity-1': {
+                title: "Obesity Remedy (BMI > 30)",
+                description: "A comprehensive herbal formula designed to support healthy weight management and metabolism. This natural remedy combines traditional African herbs with ingredients known for their ability to support fat metabolism and appetite control.",
+                benefits: [
+                    "Supports healthy weight loss",
+                    "Boosts metabolism naturally",
+                    "Helps control appetite",
+                    "Promotes fat burning",
+                    "100% natural herbal ingredients"
+                ],
+                ingredients: "Green Tea, Garcinia Cambogia, Cayenne, Ginger, Cinnamon, Seamoss, and traditional African weight management herbs."
+            },
+            'obesity-2': {
+                title: "Natural Weight Management",
+                description: "This powerful herbal blend is formulated to support natural weight management and overall metabolic health. Our remedy helps boost metabolism, control cravings, and support healthy weight loss.",
+                benefits: [
+                    "Supports natural weight management",
+                    "Enhances metabolic function",
+                    "Reduces food cravings",
+                    "Promotes healthy digestion",
+                    "Natural and safe weight support"
+                ],
+                ingredients: "Hoodia, Glucomannan, Chromium herbs, Forskolin, Green Coffee Bean, Seamoss, and specialized African metabolism herbs."
+            }
+        };
+
+        document.addEventListener('DOMContentLoaded', function() {
+            // ... existing code ...
+            
+            // Mobile menu functionality
+            const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+            const closeMenu = document.querySelector('.close-menu');
+            const navLinks = document.querySelector('.nav-links');
+            
+            mobileMenuToggle.addEventListener('click', function() {
+                navLinks.classList.add('active');
+            });
+            
+            closeMenu.addEventListener('click', function() {
+                navLinks.classList.remove('active');
+            });
+            
+            // Close menu when clicking on a link
+            document.querySelectorAll('.nav-links a').forEach(link => {
+                link.addEventListener('click', function() {
+                    navLinks.classList.remove('active');
+                });
+            });
+            
+            // Scroll to top functionality
+            const scrollTop = document.querySelector('.scroll-top');
+            
+            window.addEventListener('scroll', function() {
+                if (window.scrollY > 300) {
+                    scrollTop.classList.add('visible');
+                } else {
+                    scrollTop.classList.remove('visible');
+                }
+            });
+            
+            scrollTop.addEventListener('click', function() {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+            
+            // Product filtering functionality
+            const tagItems = document.querySelectorAll('.tag-item');
+            const productCards = document.querySelectorAll('.product-card');
+            const resultsText = document.getElementById('resultsText');
+            const noProducts = document.getElementById('noProducts');
+            const searchInput = document.getElementById('searchInput');
+            
+            let currentCategory = 'all';
+            
+            // Function to filter products
+            function filterProducts(category) {
+                currentCategory = category;
+                let visibleCount = 0;
+                
+                productCards.forEach(card => {
+                    if (category === 'all' || card.dataset.category === category) {
+                        card.classList.add('visible');
+                        visibleCount++;
+                    } else {
+                        card.classList.remove('visible');
+                    }
+                });
+                
+                // Update results text
+                if (category === 'all') {
+                    resultsText.textContent = `Showing all products (${visibleCount} items)`;
+                } else {
+                    const categoryName = document.querySelector(`[data-category="${category}"]`).textContent;
+                    resultsText.textContent = `Showing products for: ${categoryName} (${visibleCount} items)`;
+                }
+                
+                // Show/hide no products message
+                if (visibleCount === 0) {
+                    noProducts.classList.add('visible');
+                } else {
+                    noProducts.classList.remove('visible');
+                }
+                
+                // Update active tag
+                tagItems.forEach(tag => {
+                    if (tag.dataset.category === category) {
+                        tag.classList.add('active');
+                    } else {
+                        tag.classList.remove('active');
+                    }
+                });
+            }
+            
+            // Add click event to all tag items
+            tagItems.forEach(tag => {
+                tag.addEventListener('click', function() {
+                    const category = this.dataset.category;
+                    filterProducts(category);
+                    searchInput.value = ''; // Clear search when filtering by category
+                });
+            });
+            
+            // Search functionality
+            searchInput.addEventListener('input', function() {
+                const searchTerm = this.value.toLowerCase();
+                let visibleCount = 0;
+                
+                productCards.forEach(card => {
+                    const title = card.querySelector('.product-title');
+                    const titleText = title ? title.textContent.toLowerCase() : '';
+                    const category = card.dataset.category;
+                    
+                    if (titleText.includes(searchTerm) || category.includes(searchTerm)) {
+                        card.classList.add('visible');
+                        visibleCount++;
+                    } else {
+                        card.classList.remove('visible');
+                    }
+                });
+                
+                // Update results text
+                if (searchTerm === '') {
+                    resultsText.textContent = 'Showing all products';
+                } else {
+                    resultsText.textContent = `Search results for "${searchTerm}" (${visibleCount} items)`;
+                }
+                
+                // Show/hide no products message
+                if (visibleCount === 0) {
+                    noProducts.classList.add('visible');
+                } else {
+                    noProducts.classList.remove('visible');
+                }
+                
+                // Remove active state from tags when searching
+                tagItems.forEach(tag => tag.classList.remove('active'));
+            });
+            
+            // Show all products by default
+            filterProducts('all');
+
+            // <CHANGE> Added product modal functionality
+            const productModal = document.getElementById('productModal');
+            const modalClose = document.getElementById('modalClose');
+            const modalImage = document.getElementById('modalImage');
+            const modalTitle = document.getElementById('modalTitle');
+            const modalDescription = document.getElementById('modalDescription');
+            const modalBenefits = document.getElementById('modalBenefits');
+            const modalIngredients = document.getElementById('modalIngredients');
+
+            // Add click event to all product cards
+            productCards.forEach(card => {
+                card.addEventListener('click', function() {
+                    const productId = this.dataset.product;
+                    const product = productData[productId];
+                    
+                    if (product) {
+                        // Get the image from the card
+                        const cardImage = this.querySelector('.product-image');
+                        
+                        // Populate modal with product data
+                        modalImage.src = cardImage.src;
+                        modalImage.alt = product.title;
+                        modalTitle.textContent = product.title;
+                        modalDescription.textContent = product.description;
+                        
+                        // Populate benefits list
+                        modalBenefits.innerHTML = '';
+                        product.benefits.forEach(benefit => {
+                            const li = document.createElement('li');
+                            li.textContent = benefit;
+                            modalBenefits.appendChild(li);
+                        });
+                        
+                        // Populate ingredients
+                        modalIngredients.textContent = product.ingredients;
+                        
+                        // Show modal
+                        productModal.classList.add('active');
+                        document.body.style.overflow = 'hidden'; // Prevent background scrolling
+                    }
+                });
+            });
+
+            // Close modal when clicking close button
+            modalClose.addEventListener('click', function() {
+                productModal.classList.remove('active');
+                document.body.style.overflow = ''; // Restore scrolling
+            });
+
+            // Close modal when clicking outside the modal content
+            productModal.addEventListener('click', function(e) {
+                if (e.target === productModal) {
+                    productModal.classList.remove('active');
+                    document.body.style.overflow = ''; // Restore scrolling
+                }
+            });
+
+            // Close modal with Escape key
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape' && productModal.classList.contains('active')) {
+                    productModal.classList.remove('active');
+                    document.body.style.overflow = ''; // Restore scrolling
+                }
+            });
+        });
+    </script>
+</body>
+</html>

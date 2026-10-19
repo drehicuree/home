@@ -1,0 +1,1685 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dr Ehi Herbal Cure - Natural Herbal Solutions</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            overflow-x: hidden;
+            color: #333;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* Top Bar */
+        .top-bar {
+            background-color: #8bc34a;
+            color: white;
+            padding: 8px 0;
+            font-size: 14px;
+        }
+
+        .top-bar-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 90%;
+            margin: 0 auto;
+            flex-wrap: wrap;
+            gap: 6px;
+        }
+
+        .contact-info-topbar {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .contact-info-item {
+            display: flex;
+            align-items: center;
+        }
+
+        .contact-info-item i {
+            margin-right: 6px;
+            font-size: 14px;
+        }
+
+        /* Header and Navigation */
+        header {
+            position: absolute;
+            width: 100%;
+            z-index: 1000;
+            padding: 10px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.2);
+            transition: background 0.3s;
+        }
+
+        .header-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo img {
+            height: 40px;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .nav-links a {
+            color: white;
+            font-weight: 500;
+            font-size: 16px;
+            position: relative;
+            padding: 5px 0;
+            transition: color 0.3s;
+            text-decoration: none;
+        }
+
+        .nav-links a:hover {
+            color: #8bc34a;
+        }
+
+        .nav-links li:first-child a {
+            color: #8bc34a;
+        }
+
+        /* Hamburger Toggle */
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            padding: 5px;
+            z-index: 1100;
+            background: none;
+            border: none;
+            outline: none;
+        }
+
+        .menu-toggle span {
+            display: block;
+            width: 26px;
+            height: 3px;
+            background: white;
+            border-radius: 3px;
+            transition: all 0.35s ease;
+            transform-origin: center;
+        }
+
+        .menu-toggle.open span:nth-child(1) {
+            transform: translateY(8px) rotate(45deg);
+        }
+
+        .menu-toggle.open span:nth-child(2) {
+            opacity: 0;
+            transform: scaleX(0);
+        }
+
+        .menu-toggle.open span:nth-child(3) {
+            transform: translateY(-8px) rotate(-45deg);
+        }
+
+        /* Mobile Drawer */
+        .mobile-nav-overlay {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.5);
+            z-index: 1050;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .mobile-nav-overlay.open {
+            opacity: 1;
+        }
+
+        .mobile-nav-drawer {
+            position: fixed;
+            top: 0;
+            right: 0;
+            height: 100%;
+            width: min(80vw, 320px);
+            background: #1e2a2f;
+            z-index: 1100;
+            padding: 80px 30px 30px;
+            transform: translateX(100%);
+            transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+            overflow-y: auto;
+        }
+
+        .mobile-nav-drawer.open {
+            transform: translateX(0);
+        }
+
+        .mobile-nav-links {
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+        }
+
+        .mobile-nav-links li {
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+        }
+
+        .mobile-nav-links a {
+            display: block;
+            color: white;
+            font-size: 17px;
+            font-weight: 500;
+            padding: 16px 0;
+            transition: color 0.3s, padding-left 0.3s;
+        }
+
+        .mobile-nav-links a:hover {
+            color: #8bc34a;
+            padding-left: 8px;
+        }
+
+        .mobile-nav-links li:first-child a {
+            color: #8bc34a;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://source.unsplash.com/random/1920x1080/?herbs,mortar') no-repeat center center/cover;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-content {
+            text-align: center;
+            color: white;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 120px 20px 60px;
+            position: relative;
+            z-index: 2;
+            width: 100%;
+        }
+
+        .hero h1 {
+            font-size: clamp(24px, 4vw, 48px);
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .hero h1.hero-tagline {
+            color: #8bc34a;
+            font-size: clamp(26px, 4.5vw, 56px);
+            margin-top: -10px;
+        }
+
+        .hero p {
+            font-size: clamp(14px, 1.6vw, 16px);
+            line-height: 1.7;
+            margin: 0 auto 30px;
+            max-width: 800px;
+        }
+
+        .btn {
+            display: inline-block;
+            background: #8bc34a;
+            color: white;
+            padding: 12px 30px;
+            border-radius: 30px;
+            font-weight: 600;
+            transition: all 0.3s;
+            border: 2px solid #8bc34a;
+        }
+
+        .btn:hover {
+            background: transparent;
+            color: #8bc34a;
+        }
+
+        .btn i {
+            margin-left: 8px;
+        }
+
+        .leaf {
+            position: absolute;
+            width: clamp(40px, 6vw, 80px);
+            height: auto;
+            z-index: 1;
+        }
+
+        .leaf1 { top: 15%; left: 10%; }
+        .leaf2 { top: 60%; left: 5%; }
+        .leaf3 { top: 20%; right: 10%; }
+        .leaf4 { bottom: 15%; right: 15%; }
+
+        /* Social Sidebar */
+        .social-sidebar {
+            position: fixed;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 99;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .social-sidebar a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: transparent;
+            color: white;
+            margin-bottom: 10px;
+            font-size: 18px;
+        }
+
+        .follow-us {
+            writing-mode: vertical-rl;
+            transform: rotate(180deg);
+            color: white;
+            font-size: 12px;
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+        }
+
+        /* Services Section */
+        .services {
+            display: flex;
+            margin-top: -60px;
+            position: relative;
+            z-index: 10;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .service-box {
+            flex: 1;
+            padding: 28px 18px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .service-box:nth-child(1) {
+            background: #f5f5f5;
+            color: #333;
+            border-radius: 50px 0 0 50px;
+        }
+
+        .service-box:nth-child(2) {
+            background: #1e2a2f;
+            color: white;
+        }
+
+        .service-box:nth-child(3) {
+            background: #8bc34a;
+            color: white;
+            border-radius: 0 50px 50px 0;
+        }
+
+        .service-icon {
+            font-size: 24px;
+            flex-shrink: 0;
+        }
+
+        .service-box:nth-child(1) .service-icon { color: #8bc34a; }
+        .service-box:nth-child(2) .service-icon,
+        .service-box:nth-child(3) .service-icon { color: #8bc34a; }
+
+        .service-content h3 {
+            font-size: clamp(14px, 1.5vw, 18px);
+            font-weight: 600;
+        }
+
+        .service-content p {
+            font-size: 13px;
+            opacity: 0.8;
+        }
+
+        /* About Section */
+        .about {
+            padding: 80px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .about-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.04;
+            font-size: clamp(80px, 20vw, 300px);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: bold;
+            color: #333;
+            z-index: 0;
+            user-select: none;
+            pointer-events: none;
+            white-space: nowrap;
+        }
+
+        .about .container { position: relative; z-index: 1; }
+
+        .about-company {
+            color: #8bc34a;
+            font-size: 18px;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        .section-title {
+            margin-bottom: 20px;
+        }
+
+        .section-title h2 {
+            font-size: clamp(22px, 3vw, 36px);
+            color: #333;
+            max-width: 1000px;
+            margin: 0 auto 20px;
+            line-height: 1.3;
+        }
+
+        .about-text {
+            max-width: 800px;
+            margin: 0 auto 50px;
+            color: #666;
+            font-size: clamp(15px, 1.8vw, 18px);
+            line-height: 1.6;
+            font-style: italic;
+        }
+
+        /* Features Grid */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            gap: 20px;
+            margin-top: 50px;
+            text-align: center;
+        }
+
+        .feature-item {
+            padding: 0 10px;
+            position: relative;
+        }
+
+        .feature-item::after {
+            content: '..........';
+            position: absolute;
+            top: 25%;
+            right: -5px;
+            color: #ccc;
+            letter-spacing: 2px;
+            font-size: 12px;
+        }
+
+        .feature-item:last-child::after,
+        .feature-item:nth-child(3)::after {
+            display: none;
+        }
+
+        .feature-icon {
+            width: clamp(70px, 8vw, 100px);
+            height: clamp(70px, 8vw, 100px);
+            background: #8bc34a;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 16px;
+            color: white;
+            font-size: 40px;
+            flex-shrink: 0;
+        }
+
+        .feature-icon img {
+            width: 50%;
+            height: 50%;
+            object-fit: contain;
+        }
+
+        .feature-title {
+            font-size: clamp(14px, 1.5vw, 20px);
+            margin-bottom: 10px;
+            color: #333;
+            font-weight: bold;
+            word-break: break-word;
+        }
+
+        .feature-text {
+            font-size: 13px;
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .read-more-btn {
+            display: inline-block;
+            background: #333;
+            color: white;
+            padding: 12px 30px;
+            border-radius: 30px;
+            font-weight: 600;
+            transition: all 0.3s;
+            margin-top: 50px;
+        }
+
+        .read-more-btn:hover { background: #8bc34a; }
+        .read-more-btn i { margin-left: 8px; }
+
+        /* Products Section */
+        .products {
+            padding: 80px 0;
+            background: #f9f9f9;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .products-bg {
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            opacity: 0.04;
+            font-size: clamp(80px, 20vw, 300px);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: bold;
+            color: #333;
+            z-index: 0;
+            user-select: none;
+            pointer-events: none;
+        }
+
+        .products-header {
+            position: relative;
+            z-index: 1;
+            margin-bottom: 40px;
+        }
+
+        .products-header .online-text {
+            color: #8bc34a;
+            font-weight: 600;
+            margin-bottom: 10px;
+            font-size: 18px;
+        }
+
+        .products-header h2 {
+            font-size: clamp(24px, 3vw, 36px);
+            margin-bottom: 15px;
+            color: #333;
+        }
+
+        .products-header .sub-text {
+            color: #666;
+            max-width: 700px;
+            margin: 0 auto;
+            font-size: 16px;
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-top: 40px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .product-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            text-align: left;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .product-img {
+            height: 220px;
+            overflow: hidden;
+        }
+
+        .product-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.4s;
+        }
+
+        .product-card:hover .product-img img { transform: scale(1.05); }
+
+        .product-info {
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+
+        .product-rating {
+            color: #ffc107;
+            margin-bottom: 10px;
+            font-size: 15px;
+        }
+
+        .product-info h3 {
+            font-size: clamp(16px, 1.6vw, 22px);
+            margin-bottom: 12px;
+            color: #333;
+            font-weight: bold;
+        }
+
+        .product-info p {
+            color: #666;
+            margin-bottom: 15px;
+            font-size: 14px;
+            line-height: 1.6;
+            flex-grow: 1;
+        }
+
+        .view-more {
+            margin-top: 50px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .view-more-btn {
+            display: inline-block;
+            background: #8bc34a;
+            color: white;
+            padding: 12px 30px;
+            border-radius: 30px;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .view-more-btn:hover { background: #7ab33d; }
+        .view-more-btn i { margin-left: 8px; }
+
+        /* No Regrets Section */
+        .no-regrets {
+            padding: 80px 0;
+            background: #fff;
+        }
+
+        .no-regrets-container {
+            display: flex;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            gap: 40px;
+            align-items: flex-start;
+        }
+
+        .no-regrets-gallery {
+            width: 280px;
+            flex-shrink: 0;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+        }
+
+        .gallery-img {
+            border-radius: 6px;
+            overflow: hidden;
+            border: 1px solid #eee;
+        }
+
+        .gallery-img img {
+            width: 100%;
+            height: auto;
+            display: block;
+            object-fit: cover;
+        }
+
+        .no-regrets-content {
+            flex: 1;
+            padding-top: 10px;
+        }
+
+        .no-regrets-logo {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: #f5f5f5;
+            margin-bottom: 15px;
+        }
+
+        .no-regrets-title {
+            font-size: clamp(20px, 2.5vw, 28px);
+            font-weight: bold;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .no-regrets-text {
+            color: #666;
+            font-size: 14px;
+            line-height: 1.8;
+            margin-bottom: 16px;
+        }
+
+        .no-regrets-btn {
+            display: inline-block;
+            background: #8bc34a;
+            color: white;
+            padding: 11px 25px;
+            border-radius: 30px;
+            font-weight: 600;
+            font-size: 14px;
+            transition: all 0.3s;
+            margin-top: 10px;
+        }
+
+        .no-regrets-btn:hover { background: #7ab33d; }
+
+        /* Contact Section */
+        .contact {
+            padding: 40px 0;
+            background: #8bc34a;
+            color: white;
+        }
+
+        .contact-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .contact-text {
+            flex: 1;
+            min-width: 200px;
+        }
+
+        .contact-text p { font-size: 16px; }
+
+        .contact-phone {
+            display: flex;
+            align-items: center;
+            background: #333;
+            padding: 14px 22px;
+            border-radius: 50px;
+        }
+
+        .contact-phone i {
+            font-size: 22px;
+            margin-right: 12px;
+        }
+
+        .contact-phone span {
+            font-size: clamp(16px, 2vw, 20px);
+            font-weight: 600;
+        }
+
+        .contact-btn {
+            background: #333;
+            color: white;
+            border: 2px solid #333;
+            display: flex;
+            align-items: center;
+            padding: 12px 22px;
+            border-radius: 30px;
+            white-space: nowrap;
+        }
+
+        .contact-btn:hover {
+            background: transparent;
+            color: white;
+        }
+
+        .contact-btn i { margin-left: 8px; }
+
+        /* Footer */
+        .main-footer {
+            text-align: center;
+            padding: 40px 0 0;
+        }
+
+        .order-btn-large {
+            display: inline-block;
+            background: #8bc34a;
+            color: white;
+            padding: 15px 28px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: clamp(15px, 1.8vw, 18px);
+            transition: all 0.3s;
+            margin-bottom: 40px;
+        }
+
+        .order-btn-large:hover { background: #7ab33d; }
+        .order-btn-large i { margin-left: 10px; }
+
+        .footer-dark {
+            background-color: #1e2a2f;
+            color: white;
+            padding: 50px 0 20px;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .footer-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .footer-payment {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .footer-badges {
+            display: flex;
+            gap: 12px;
+        }
+
+        .footer-badge {
+            width: 55px;
+            height: 55px;
+            object-fit: contain;
+        }
+
+        .payment-text {
+            margin-bottom: 6px;
+            color: white;
+            font-size: 14px;
+        }
+
+        .payment-platforms {
+            display: flex;
+            gap: 10px;
+        }
+
+        .payment-icon {
+            width: 38px;
+            height: 38px;
+            background-color: #8bc34a;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 18px;
+        }
+
+        .footer-social { text-align: right; }
+
+        .social-text {
+            margin-bottom: 14px;
+            font-size: 17px;
+            color: white;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 12px;
+            justify-content: flex-end;
+        }
+
+        .social-icon {
+            width: 48px;
+            height: 48px;
+            background-color: #8bc34a;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 22px;
+            transition: all 0.3s;
+        }
+
+        .social-icon:hover { transform: translateY(-5px); }
+
+        .footer-columns {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 40px;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .footer-column {
+            flex: 1;
+            min-width: 260px;
+        }
+
+        .footer-column h3 {
+            color: #8bc34a;
+            font-size: clamp(18px, 2vw, 24px);
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+
+        .footer-column p {
+            color: #ccc;
+            line-height: 1.8;
+            margin-bottom: 12px;
+            font-size: 14px;
+        }
+
+        .contact-info { margin-top: 20px; }
+
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 14px;
+            color: #ccc;
+        }
+
+        .contact-item i {
+            color: #8bc34a;
+            margin-right: 10px;
+            font-size: 17px;
+            width: 20px;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .contact-item a {
+            color: #ccc;
+            transition: color 0.3s;
+        }
+
+        .contact-item a:hover { color: #8bc34a; }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #ccc;
+            font-size: 14px;
+        }
+
+        .footer-bottom a { color: #8bc34a; }
+
+        /* Chat Widget */
+        .chat-widget {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            z-index: 1000;
+        }
+
+        .chat-bubble {
+            width: 56px;
+            height: 56px;
+            background-color: #8bc34a;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 22px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .chat-bubble:hover { transform: scale(1.1); }
+
+        /* Back to Top */
+        .back-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 90px;
+            width: 40px;
+            height: 40px;
+            background-color: #8bc34a;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 18px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            z-index: 999;
+            transition: all 0.3s;
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        .back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .back-to-top:hover { transform: translateY(-5px); }
+
+        /* WhatsApp Button */
+        .whatsapp-btn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 56px;
+            height: 56px;
+            background-color: #25d366;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 28px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            z-index: 1000;
+            transition: all 0.3s;
+        }
+
+        .whatsapp-btn:hover { transform: scale(1.1); }
+
+        /* Navigation Dots */
+        .nav-dots {
+            position: fixed;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 99;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .nav-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.5);
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .nav-dot.active { background: #8bc34a; }
+
+        /* ================================================================
+           TABLET — 992px and below
+        ================================================================ */
+        @media (max-width: 992px) {
+            .nav-links { display: none; }
+            .menu-toggle { display: flex; }
+            .feature-item::after { display: none; }
+            .features-grid { grid-template-columns: repeat(3, 1fr); gap: 20px; }
+            .product-grid { grid-template-columns: repeat(2, 1fr); }
+            .no-regrets-container { flex-direction: column; }
+            .no-regrets-gallery { width: 100%; grid-template-columns: repeat(4, 1fr); }
+            .contact-content { flex-direction: column; align-items: flex-start; gap: 16px; }
+            .social-sidebar { display: none; }
+            .nav-dots { display: none; }
+        }
+
+        /* ================================================================
+           MOBILE — 768px and below
+        ================================================================ */
+        @media (max-width: 768px) {
+
+            /* Top bar */
+            .top-bar { padding: 4px 0; }
+            .top-bar-content { flex-wrap: wrap; gap: 3px 8px; font-size: 10px; }
+            .contact-info-topbar { gap: 6px; }
+            .contact-info-item i { font-size: 10px; margin-right: 3px; }
+
+            /* Logo */
+            .logo img { height: 32px; }
+
+            /* Hero */
+            .hero { min-height: auto; }
+            .hero-content { padding: 80px 12px 36px; }
+            .hero h1 { font-size: 16px; margin-bottom: 8px; line-height: 1.3; }
+            .hero h1.hero-tagline { font-size: 14px; margin-top: -4px; }
+            .hero p { font-size: 11px; line-height: 1.5; margin-bottom: 14px; }
+            .leaf { width: 28px; }
+            .btn { padding: 8px 16px; font-size: 12px; border-radius: 20px; }
+
+            /* Services: 3-col horizontal row */
+            .services { flex-direction: row; margin-top: -14px; border-radius: 6px; }
+            .service-box {
+                flex: 1;
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+                padding: 10px 4px;
+                gap: 4px;
+            }
+            .service-box:nth-child(1) { border-radius: 6px 0 0 6px; }
+            .service-box:nth-child(2) { border-radius: 0; }
+            .service-box:nth-child(3) { border-radius: 0 6px 6px 0; }
+            .service-icon img { width: 22px !important; height: 22px !important; }
+            .service-content h3 { font-size: 9px; line-height: 1.3; font-weight: 600; }
+
+            /* About */
+            .about { padding: 32px 0; }
+            .about-company { font-size: 11px; margin-bottom: 6px; }
+            .section-title h2 { font-size: 14px; margin-bottom: 8px; line-height: 1.3; }
+            .about-text { font-size: 11px; margin-bottom: 20px; line-height: 1.5; }
+            .read-more-btn { padding: 8px 16px; font-size: 11px; margin-top: 20px; border-radius: 20px; }
+
+            /* Features: 3-col grid */
+            .features-grid { grid-template-columns: repeat(3, 1fr); gap: 8px; margin-top: 16px; }
+            .feature-item { padding: 0 2px; }
+            .feature-icon { width: 44px; height: 44px; font-size: 18px; margin-bottom: 7px; }
+            .feature-icon img { width: 52%; height: 52%; }
+            .feature-title { font-size: 10px; margin-bottom: 4px; line-height: 1.3; }
+            .feature-text { font-size: 9.5px; line-height: 1.4; }
+
+            /* Products: 3-col compact grid */
+            .products { padding: 32px 0; }
+            .products-header .online-text { font-size: 11px; margin-bottom: 4px; }
+            .products-header h2 { font-size: 15px; margin-bottom: 6px; }
+            .products-header .sub-text { font-size: 11px; }
+            .product-grid { grid-template-columns: repeat(3, 1fr); gap: 8px; margin-top: 14px; }
+            .product-img { height: 90px; }
+            .product-info { padding: 8px; }
+            .product-info h3 { font-size: 10px; margin-bottom: 5px; line-height: 1.3; }
+            .product-info p { font-size: 9px; line-height: 1.4; margin-bottom: 6px; }
+            .product-rating { font-size: 9px; margin-bottom: 4px; }
+            .view-more { margin-top: 16px; }
+            .view-more-btn { padding: 8px 16px; font-size: 11px; border-radius: 20px; }
+
+            /* No Regrets */
+            .no-regrets { padding: 32px 0; }
+            .no-regrets-container { flex-direction: column; gap: 16px; padding: 0 12px; }
+            .no-regrets-gallery { width: 100%; grid-template-columns: repeat(3, 1fr); gap: 5px; }
+            .no-regrets-logo { width: 36px; height: 36px; margin-bottom: 8px; }
+            .no-regrets-title { font-size: 15px; margin-bottom: 10px; }
+            .no-regrets-text { font-size: 11px; line-height: 1.5; margin-bottom: 8px; }
+            .no-regrets-btn { padding: 8px 16px; font-size: 11px; border-radius: 20px; margin-top: 6px; }
+
+            /* Contact */
+            .contact { padding: 22px 0; }
+            .contact-content { flex-direction: column; align-items: stretch; gap: 10px; }
+            .contact-text p { font-size: 11px; }
+            .contact-phone { padding: 9px 14px; border-radius: 30px; justify-content: center; }
+            .contact-phone i { font-size: 15px; margin-right: 7px; }
+            .contact-phone span { font-size: 14px; }
+            .contact-btn { padding: 9px 14px; font-size: 11px; justify-content: center; border-radius: 20px; }
+
+            /* Footer */
+            .main-footer { padding: 20px 0 0; }
+            .order-btn-large { display: block; margin: 0 12px 20px; text-align: center; font-size: 12px; padding: 10px 16px; border-radius: 30px; }
+            .footer-dark { padding: 24px 0 12px; }
+            .footer-top { flex-direction: column; gap: 14px; margin-bottom: 18px; }
+            .footer-payment { gap: 10px; }
+            .footer-badges { gap: 8px; }
+            .footer-badge { width: 34px; height: 34px; }
+            .payment-text { font-size: 10px; margin-bottom: 4px; }
+            .payment-platforms { gap: 6px; }
+            .payment-icon { width: 26px; height: 26px; font-size: 12px; }
+            .footer-social { text-align: left; }
+            .social-text { font-size: 12px; margin-bottom: 8px; }
+            .social-icons { justify-content: flex-start; gap: 8px; }
+            .social-icon { width: 34px; height: 34px; font-size: 15px; }
+            .footer-columns { flex-direction: column; gap: 16px; margin-bottom: 18px; }
+            .footer-column { min-width: unset; }
+            .footer-column h3 { font-size: 13px; margin-bottom: 10px; }
+            .footer-column p { font-size: 11px; line-height: 1.6; margin-bottom: 6px; }
+            .contact-item { margin-bottom: 8px; }
+            .contact-item i { font-size: 12px; }
+            .contact-item p { font-size: 11px; }
+            .footer-bottom { font-size: 10px; padding-top: 12px; }
+
+            /* Fixed buttons */
+            .whatsapp-btn { width: 40px; height: 40px; font-size: 18px; right: 10px; bottom: 10px; }
+            .back-to-top { width: 30px; height: 30px; font-size: 13px; right: 58px; bottom: 10px; }
+            .chat-widget { bottom: 10px; left: 10px; }
+            .chat-bubble { width: 40px; height: 40px; font-size: 16px; }
+        }
+
+        /* ================================================================
+           SMALL MOBILE — 480px and below
+        ================================================================ */
+        @media (max-width: 480px) {
+            /* Services: keep 3-col, tighter */
+            .services { margin-top: -10px; }
+            .service-box { padding: 8px 3px; }
+            .service-icon img { width: 18px !important; height: 18px !important; }
+            .service-content h3 { font-size: 8px; }
+
+            /* Features: keep 3-col */
+            .features-grid { gap: 6px; margin-top: 12px; }
+            .feature-icon { width: 38px; height: 38px; font-size: 15px; margin-bottom: 5px; }
+            .feature-title { font-size: 9px; }
+            .feature-text { font-size: 8.5px; }
+
+            /* Products: keep 3-col */
+            .product-grid { gap: 6px; }
+            .product-img { height: 70px; }
+            .product-info { padding: 6px; }
+            .product-info h3 { font-size: 9px; }
+            .product-info p { font-size: 8px; }
+            .product-rating { font-size: 8px; }
+
+            /* Hero */
+            .hero h1 { font-size: 14px; }
+            .hero h1.hero-tagline { font-size: 13px; }
+            .hero p { font-size: 10px; }
+
+            .no-regrets-gallery { grid-template-columns: repeat(2, 1fr); }
+        }
+
+        /* Scrolled header: dark links on light bg */
+        header.scrolled .nav-links a {
+            color: #333 !important;
+        }
+        header.scrolled .nav-links li:first-child a {
+            color: #8bc34a !important;
+        }
+        header.scrolled .menu-toggle span {
+            background: #333;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="top-bar-content">
+            <div class="contact-info-topbar">
+                <div class="contact-info-item">
+                    <i class="fas fa-phone"></i>
+                    <span>+2347055029151</span>
+                </div>
+                <div class="contact-info-item">
+                    <i class="fas fa-envelope"></i>
+                    <span>dr.ehicure@gmail.com</span>
+                </div>
+            </div>
+            <div class="contact-info-item">
+                <i class="far fa-clock"></i>
+                <span>Always Opened 24/7</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header id="header">
+        <div class="container header-container">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="image/92d84969-ebf5-4b61-a61d-29ee368a6b41-removebg-preview (1).png" alt="Dr Ehi Herbal Cure Logo">
+                </a>
+            </div>
+
+            <!-- Desktop Navigation -->
+            <nav id="nav">
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="products.html">Products</a></li>
+                    <li><a href="reviews.html">Reviews About Dr Ehi Herbs</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </nav>
+
+            <!-- Hamburger Toggle -->
+            <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Mobile Navigation Overlay -->
+    <div class="mobile-nav-overlay" id="mobileOverlay"></div>
+
+    <!-- Mobile Navigation Drawer -->
+    <div class="mobile-nav-drawer" id="mobileDrawer" role="dialog" aria-label="Mobile navigation">
+        <ul class="mobile-nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="products.html">Products</a></li>
+            <li><a href="reviews.html">Reviews About Dr Ehi Herbs</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+    </div>
+
+    <!-- Social Sidebar -->
+    <div class="social-sidebar">
+        <div class="follow-us">Follow us</div>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-google-plus-g"></i></a>
+    </div>
+
+    <!-- Navigation Dots -->
+    <div class="nav-dots">
+        <div class="nav-dot active"></div>
+        <div class="nav-dot"></div>
+        <div class="nav-dot"></div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <img src="image/leaf1.png" alt="" class="leaf leaf1">
+        <img src="image/leaf2.png" alt="" class="leaf leaf2">
+        <img src="image/leaf3.png" alt="" class="leaf leaf3">
+        <img src="image/leaf4.png" alt="" class="leaf leaf4">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Welcome To Dr Ehi Herbal Cure</h1>
+                <h1 class="hero-tagline">Herbal Remedy For Any Type Of Disease In Your Body</h1>
+                <p>Dr Ehi herbal Home Offer A Range Of Licensed Traditional Herbal Medicinal Products That Can Be Use to prevent, Relieve and permanently cure the Symptoms of many Ailments And Are An Alternative To Conventional Medicines. All Of Our Herbal Medicines Are Registered Under The Traditional Herbal Registration Scheme Which Means That They Are Of Pharmaceutical Grade And Meet Specific Safety And Quality Standards Based On Traditional Usage.</p>
+                <a href="#" class="btn">Read more <i class="fas fa-arrow-right"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <div class="container">
+        <div class="services">
+            <div class="service-box">
+                <div class="service-icon">
+                    <img src="image/12180159_ambulance_emergency_vehicle_health_transport_icon.png" alt="Delivery" style="width:40px;height:40px;">
+                </div>
+                <div class="service-content">
+                    <h3>Swift delivery services</h3>
+                </div>
+            </div>
+            <div class="service-box">
+                <div class="service-icon">
+                    <img src="image/12180172_emergency_call_help_phone_medical_icon.png" alt="Support" style="width:40px;height:40px;">
+                </div>
+                <div class="service-content">
+                    <h3>Professional customer support</h3>
+                </div>
+            </div>
+            <div class="service-box">
+                <div class="service-icon">
+                    <img src="image/12180149_supplement_health_nutrition_medical_diet_icon.png" alt="Herbs" style="width:40px;height:40px;">
+                </div>
+                <div class="service-content">
+                    <h3>Herbs &amp; Supplement</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- About Section -->
+    <section class="about">
+        <div class="about-bg">Dr Ehi Herbs</div>
+        <div class="container">
+            <div class="about-company">About company</div>
+            <div class="section-title">
+                <h2>What kind of herbal Cure do you need from Dr Ehi Herbal Cure?</h2>
+            </div>
+            <p class="about-text">It is my policy to provide safe, quality herbal products and services that conform to the demands and requirements of our customers.</p>
+
+            <div class="features-grid">
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <img src="image/about.png" alt="Highest quality">
+                    </div>
+                    <h3 class="feature-title">Highest quality</h3>
+                    <p class="feature-text">Dr Ehi Herbs, provide you with quality second to none.</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <img src="image/about-2-1.png" alt="Pure taste">
+                    </div>
+                    <h3 class="feature-title">Pure taste</h3>
+                    <p class="feature-text">As testified by our customers, Our products are of high taste with no regret.</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <img src="image/about-3-1.png" alt="Wide assortment">
+                    </div>
+                    <h3 class="feature-title">Wide assortment</h3>
+                    <p class="feature-text">Whatever the sickness or situation, Dr Ehi Herbs has the solution.</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <img src="image/about-4.png" alt="Delivery package">
+                    </div>
+                    <h3 class="feature-title">Delivery package</h3>
+                    <p class="feature-text">Our products are packaged and delivered in premium within 4-5 working days by UPS Courier Services.</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <img src="image/about-5.png" alt="Vast">
+                    </div>
+                    <h3 class="feature-title">Vast</h3>
+                    <p class="feature-text">Available any where in the worldwide.</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <img src="image/about-6.png" alt="Tested">
+                    </div>
+                    <h3 class="feature-title">Tested</h3>
+                    <p class="feature-text">Our Herbal Products Are Scientifically Proven And Approved By The National Agency For Food And Drug Administration And Control (NAFDAC).</p>
+                </div>
+            </div>
+
+            <a href="#" class="read-more-btn">Read more <i class="fas fa-arrow-right"></i></a>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section class="products">
+        <div class="products-bg">POPULAR</div>
+        <div class="container">
+            <div class="products-header">
+                <p class="online-text">We are Online</p>
+                <h2>Popular products</h2>
+                <p class="sub-text">These herbal products are highly demanded over the globe</p>
+            </div>
+
+            <div class="product-grid">
+                <div class="product-card">
+                    <div class="product-img">
+                        <img src="image/drwonder.jpg" alt="Herbal cure for Tinctures">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-rating">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                        <h3>Herbal cure for Tinctures</h3>
+                        <p>To every illness there's a "root cause" an organ/a cell is affected as a result. Place your order for herbal tinctures to detoxify and improve your organs, cells and overall health.</p>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-img">
+                        <img src="image/Product-768x1024-1.jpg" alt="Herbal medication to stop blood inflammation">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-rating">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i>
+                        </div>
+                        <h3>Herbal medication to stop blood inflammation</h3>
+                        <p>Detox your body generally of fatigue and high level sugar, iron, maintain ferritin level and cleanse the kidneys and liver.</p>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-img">
+                        <img src="image/blood-leanser.jpg" alt="Herbal cure for Weight Loss, Colon Cleanse and Wormour">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-rating">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                        <h3>Herbal cure for Weight Loss, Colon Cleanse and Wormour</h3>
+                        <p>Fast result and Permanent cure No side effect, tested and Trusted Best solution center.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="view-more">
+                <a href="#" class="view-more-btn">View more <i class="fas fa-arrow-right"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- No Regrets Section -->
+    <section class="no-regrets">
+        <div class="no-regrets-container">
+            <div class="no-regrets-gallery">
+                <div class="gallery-img"><img src="image/customization-options-exploring-personalized-mre-flavor-kits-and-mixes-pV.jpeg" alt="Herbal products"></div>
+                <div class="gallery-img"><img src="image/daibetes.jpg" alt="Herbal products"></div>
+                <div class="gallery-img"><img src="image/Owkala.jpg" alt="Herbal products"></div>
+                <div class="gallery-img"><img src="image/drwonderrr.jpg" alt="Herbal products"></div>
+                <div class="gallery-img"><img src="image/spermboster.jpg" alt="Herbal products"></div>
+                <div class="gallery-img"><img src="image/fibroid.jpg" alt="Herbal products"></div>
+                <div class="gallery-img"><img src="image/flat-tummy.jpg" alt="Herbal products"></div>
+                <div class="gallery-img"><img src="image/herbal-cream.jpg" alt="Herbal products"></div>
+                <div class="gallery-img"><img src="image/image3 (1).jpeg" alt="Herbal products"></div>
+                <div class="gallery-img"><img src="image/ulcer.jpg" alt="Herbal products"></div>
+            </div>
+
+            <div class="no-regrets-content">
+                <div class="no-regrets-logo"></div>
+                <h2 class="no-regrets-title">No Regrets With Dr Ehi Herbs</h2>
+                <p class="no-regrets-text">I'm not looking for personal benefits from our work as my aim is to help you get rid of your health problems. I have been able to help thousands of people all over the world with my herbal remedies. I'm a professional herbalist with over 30 years of experience in the field of herbal medicine. I have dedicated my life to researching and developing herbal remedies that work.</p>
+                <p class="no-regrets-text">At the Dr Ehi herbal Home, Our aim is to make life better with a solution to every health challenge. We are here to help you with a solution to your health problems. Our herbal products are made from 100% natural ingredients with no side effects.</p>
+                <p class="no-regrets-text">Looking for simple, natural or herbal cures for common ailments with no side effects? Our herbal remedies are your best option. We have herbal cures for various health conditions and diseases. Though herbal treatments and herbal remedies are sometimes slow to work, unlike the fast-acting drugs that are often prescribed, they are generally safer and more effective in the long run.</p>
+                <p class="no-regrets-text">Our herbal products are made from 100% natural ingredients with no side effects. We have herbal cures for various health conditions and diseases. Though herbal treatments and herbal remedies are sometimes slow to work, they are generally safer and more effective in the long run.</p>
+                <a href="#" class="no-regrets-btn">Place an order now with Dr Ehi Herbal Cure</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact">
+        <div class="container">
+            <div class="contact-content">
+                <div class="contact-text">
+                    <p>You Can Contact Dr Ehi Herbs through this stated phone number below, via calls or WhatsApp</p>
+                </div>
+                <div class="contact-phone">
+                    <i class="fas fa-phone-alt"></i>
+                    <span>+2347055029151</span>
+                </div>
+                <a href="#" class="btn contact-btn">Place An Order Now <i class="fas fa-arrow-right"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Footer -->
+    <footer class="main-footer">
+        <a href="#" class="order-btn-large">Place An Order Now At Dr Ehi Herbal Cure <i class="fas fa-arrow-right"></i></a>
+
+        <div class="footer-dark">
+            <div class="footer-container">
+                <div class="footer-top">
+                    <div class="footer-payment">
+                        <div class="footer-badges">
+                            <img src="image/logo_040.png" alt="Herbal Product Badge" class="footer-badge">
+                            <img src="/placeholder.svg" alt="Badge" class="footer-badge">
+                        </div>
+                        <div>
+                            <p class="payment-text">Payment</p>
+                            <p class="payment-text">These Are Our Payment Platforms</p>
+                            <div class="payment-platforms">
+                                <div class="payment-icon"><span>Z</span></div>
+                                <div class="payment-icon"><span>V</span></div>
+                                <div class="payment-icon"><i class="fab fa-paypal"></i></div>
+                                <div class="payment-icon"><i class="fas fa-dollar-sign"></i></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="footer-social">
+                        <p class="social-text">Follow Dr Ehi Herbs Social Media —</p>
+                        <div class="social-icons">
+                            <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="footer-columns">
+                    <div class="footer-column">
+                        <h3>About Dr Ehi Herbs</h3>
+                        <p>Dr Ehi herbal Cure:</p>
+                        <p>I am Dr Ehi Herbs by name. I'm a herbal medicinal from Africa, I have been in this herbal work for years now and I have cured a lot of persons from various diseases, my grandmother was once a healer (traditional medicinal) at a little age I started assisting her with the work and then she passed away and left the work with me, God gave me this gift to heal his people and it has being my main aim to heal God's people and do his work to please only him who put me to earth for this purpose. My traditional home made herbal medicine will help eradicate your virus within 14 days, you won't be able to trace any symptoms and once you go for check up behold your results will be confirmed negative. You just need to have faith and the believe in my medicine as faith conquers it all.</p>
+                        <p>I would Say that Herbal medicine is a part and parcel of and sometimes synonymous with traditional medicine. It is the oldest and still the most widely used system of medicine in the world today. It is used in all societies and is common to all cultures.</p>
+                    </div>
+
+                    <div class="footer-column">
+                        <h3>Contact With Dr Ehi Herbs Below Information:</h3>
+                        <div class="contact-info">
+                            <div class="contact-item">
+                                <i class="fas fa-envelope"></i>
+                                <p>Private Email: <a href="mailto:dr.ehicure@gmail.com">dr.ehicure@gmail.com</a></p>
+                            </div>
+                            <div class="contact-item">
+                                <i class="fas fa-phone-alt"></i>
+                                <p><a href="tel:+2347055029151">+2347055029151</a></p>
+                            </div>
+                            <div class="contact-item">
+                                <i class="fas fa-info-circle"></i>
+                                <p>Dr Ehi herbal Cure</p>
+                            </div>
+                            <div class="contact-item">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <p>Location: 729 Bayberry ct Nashville, North Carolina (NC) 27856</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="footer-bottom">
+                    <p>2025 &copy; All Rights Reserved - <a href="#">Dr Ehi Herbs Online</a></p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Button -->
+    <a href="https://wa.me/14247381393" class="whatsapp-btn" target="_blank" rel="noopener noreferrer">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Chat Widget -->
+    <div class="chat-widget">
+        <div class="chat-bubble">
+            <i class="far fa-comment-dots"></i>
+        </div>
+    </div>
+
+    <!-- Back to Top Button -->
+    <a href="#" class="back-to-top" id="backToTop">
+        <i class="fas fa-chevron-up"></i>
+    </a>
+
+    <script>
+        (function () {
+            var header = document.getElementById('header');
+            var menuToggle = document.getElementById('menuToggle');
+            var mobileDrawer = document.getElementById('mobileDrawer');
+            var mobileOverlay = document.getElementById('mobileOverlay');
+            var backToTop = document.getElementById('backToTop');
+            var navLinks = document.querySelectorAll('.nav-links a');
+            var isOpen = false;
+
+            /* ---- Hamburger open/close ---- */
+            function openMenu() {
+                isOpen = true;
+                menuToggle.classList.add('open');
+                menuToggle.setAttribute('aria-expanded', 'true');
+                mobileDrawer.classList.add('open');
+                mobileOverlay.style.display = 'block';
+                requestAnimationFrame(function () {
+                    mobileOverlay.classList.add('open');
+                });
+                document.body.style.overflow = 'hidden';
+            }
+
+            function closeMenu() {
+                isOpen = false;
+                menuToggle.classList.remove('open');
+                menuToggle.setAttribute('aria-expanded', 'false');
+                mobileDrawer.classList.remove('open');
+                mobileOverlay.classList.remove('open');
+                document.body.style.overflow = '';
+                setTimeout(function () {
+                    if (!isOpen) mobileOverlay.style.display = 'none';
+                }, 300);
+            }
+
+            menuToggle.addEventListener('click', function () {
+                if (isOpen) { closeMenu(); } else { openMenu(); }
+            });
+
+            mobileOverlay.addEventListener('click', closeMenu);
+
+            /* Close drawer when a link is clicked */
+            document.querySelectorAll('.mobile-nav-links a').forEach(function (link) {
+                link.addEventListener('click', closeMenu);
+            });
+
+            /* ---- Scroll: header style + back-to-top ---- */
+            window.addEventListener('scroll', function () {
+                if (window.scrollY > 100) {
+                    header.style.background = 'rgba(255,255,255,0.96)';
+                    header.style.boxShadow = '0 2px 10px rgba(0,0,0,0.1)';
+                    header.classList.add('scrolled');
+                    navLinks.forEach(function (link) { link.style.color = '#333'; });
+                    var firstLink = document.querySelector('.nav-links li:first-child a');
+                    if (firstLink) firstLink.style.color = '#8bc34a';
+                    if (menuToggle) {
+                        menuToggle.querySelectorAll('span').forEach(function (s) { s.style.background = '#333'; });
+                    }
+                    backToTop.classList.add('visible');
+                } else {
+                    header.style.background = 'transparent';
+                    header.style.boxShadow = 'none';
+                    header.classList.remove('scrolled');
+                    navLinks.forEach(function (link) { link.style.color = 'white'; });
+                    var firstLink2 = document.querySelector('.nav-links li:first-child a');
+                    if (firstLink2) firstLink2.style.color = '#8bc34a';
+                    if (menuToggle) {
+                        menuToggle.querySelectorAll('span').forEach(function (s) { s.style.background = 'white'; });
+                    }
+                    backToTop.classList.remove('visible');
+                }
+            });
+
+            /* ---- Back to top smooth scroll ---- */
+            backToTop.addEventListener('click', function (e) {
+                e.preventDefault();
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+        })();
+    </script>
+</body>
+</html>
